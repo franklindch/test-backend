@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.4.5'
 
 gem 'devise'
+gem 'figaro'
+gem 'omniauth-facebook'
 gem 'rails', '5.1.0'
 gem 'puma'
 gem 'pg'
