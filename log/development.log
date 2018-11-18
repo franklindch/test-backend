@@ -2933,3 +2933,547 @@ Migrating to AddOauthFieldsToUsers (20181118153658)
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8688009949366714365)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:37:25 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 256ms (Views: 231.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-11-18 16:37:28 +0100
+Started GET "/users/auth/facebook/callback?code=AQBmKQw8EOUg4faBpbY-Jain1GP9Q7gLfNW-xNdOQ5CQydcCyzlA5J0EhPS0V8IRtKB5zNdu5FDWE046Kp2Nfv8keSzwazoH1g_GHrtExdwPSpjdHuMAEhdZ81p8aUBFa9_SV1sx4IbObMMj_xXekOlSvc2fuAJC7ggOx-x_63u6nj-84YU8Adx2rYmYy4NpBZirOPvL7fLt8wxldMrCj3pCMv8dMUep7ruAXZ8UXBDRGDdzLgH9vhuMailT-RsTOZ4DcN_BGss7OEuTSbpdFNR632AOTwm9fN2RtJYbQqpRo3nfA4HM7sEUnV1ZJZPUz4o&state=d14d4c9f3c45361a604958e1ab61efe0f73a79fc474467fe" for 127.0.0.1 at 2018-11-18 16:37:28 +0100
+
+NameError - uninitialized constant OmniauthCallbacksController:
+  activesupport (5.1.0) lib/active_support/dependencies.rb:549:in `load_missing_constant'
+  activesupport (5.1.0) lib/active_support/dependencies.rb:202:in `const_missing'
+  activesupport (5.1.0) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+  activesupport (5.1.0) lib/active_support/inflector/methods.rb:267:in `constantize'
+  activesupport (5.1.0) lib/active_support/dependencies.rb:582:in `get'
+  activesupport (5.1.0) lib/active_support/dependencies.rb:613:in `constantize'
+  actionpack (5.1.0) lib/action_dispatch/http/request.rb:82:in `controller_class'
+  actionpack (5.1.0) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+  actionpack (5.1.0) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+  actionpack (5.1.0) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+  actionpack (5.1.0) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+  actionpack (5.1.0) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+  actionpack (5.1.0) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.0) lib/action_dispatch/routing/route_set.rb:832:in `call'
+  omniauth (1.8.1) lib/omniauth/strategy.rb:415:in `call_app!'
+  omniauth (1.8.1) lib/omniauth/strategy.rb:369:in `callback_phase'
+  omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:75:in `callback_phase'
+  omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+  omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+  omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+  omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+  omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+  omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.0) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.0) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.0) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.0) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/ce84deff588035c4/variables" for 127.0.0.1 at 2018-11-18 16:37:29 +0100
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:38:17 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 236ms (Views: 209.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-11-18 16:38:18 +0100
+Started GET "/users/auth/facebook/callback?code=AQDE-cvE6i1Q2Ear7qmO4VJmUiqS7iXhYCTjQ7yiT1jzRHXAC9-LycFk-7RiWGo75Xb4fLpxPFIJ5hVwJLYXM9MvtQcaWrZAjZIvtLdaNdT0A7rXJKyCQAHabeKsu3vtMrsFjHvjs6M6u4djjIKeI-1-YkCuKQWKE9Pc4LFwRWJ4ihcbB6aCyx-SS1SfceEZEp6YzBUhJtmAOlaBLluXU-3qqsWXUN4kEBsX8FcJ7NB888GyI9Ya7T0PnCdh-B54JWsuxsFoM-uujvYslqs9jZvLjwyLRsRo0T6qG60BM3J1GAvSib7NodfmVHupgx51pIw&state=c74fe8a64ec9ed5aba120aa976271395d0faa603705056ae" for 127.0.0.1 at 2018-11-18 16:38:18 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDE-cvE6i1Q2Ear7qmO4VJmUiqS7iXhYCTjQ7yiT1jzRHXAC9-LycFk-7RiWGo75Xb4fLpxPFIJ5hVwJLYXM9MvtQcaWrZAjZIvtLdaNdT0A7rXJKyCQAHabeKsu3vtMrsFjHvjs6M6u4djjIKeI-1-YkCuKQWKE9Pc4LFwRWJ4ihcbB6aCyx-SS1SfceEZEp6YzBUhJtmAOlaBLluXU-3qqsWXUN4kEBsX8FcJ7NB888GyI9Ya7T0PnCdh-B54JWsuxsFoM-uujvYslqs9jZvLjwyLRsRo0T6qG60BM3J1GAvSib7NodfmVHupgx51pIw", "state"=>"c74fe8a64ec9ed5aba120aa976271395d0faa603705056ae"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-18 16:38:19 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-11-18 16:38:22 +0100
+Started GET "/users/auth/facebook/callback?code=AQDJTf1zvbaYwinG7dDxJSnaQL-4lOYLfYYwPlYrDu6yTco4tC8jULOcUvuKmRjnouoilYtXoaUtfFKfIyoAcMpH_t2NiCQQp2MxznmvZdK36o2G_3DcVncOpJJIhJ4jN54L_1iaQwpKEfzSyo8V9-VmoA4aDrkxFfMxEVmoQ_PpMJIKfgIGVw6iVIzzicTqVlqFQpnNwPwCP6z-4RBV8BW1w1R3VkopJFVJM7gkqvoHfmvt-CwfktKnKX7b16VHKuRpr2f6B2xge8TAnxeVQiGkT-vQrXkQTELI19rFM6gbz6jCQkITn7YvOy37kN1OcYs&state=c196aa01a962945ce819734a78422351ae5542bb60368b56" for 127.0.0.1 at 2018-11-18 16:38:23 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDJTf1zvbaYwinG7dDxJSnaQL-4lOYLfYYwPlYrDu6yTco4tC8jULOcUvuKmRjnouoilYtXoaUtfFKfIyoAcMpH_t2NiCQQp2MxznmvZdK36o2G_3DcVncOpJJIhJ4jN54L_1iaQwpKEfzSyo8V9-VmoA4aDrkxFfMxEVmoQ_PpMJIKfgIGVw6iVIzzicTqVlqFQpnNwPwCP6z-4RBV8BW1w1R3VkopJFVJM7gkqvoHfmvt-CwfktKnKX7b16VHKuRpr2f6B2xge8TAnxeVQiGkT-vQrXkQTELI19rFM6gbz6jCQkITn7YvOy37kN1OcYs", "state"=>"c196aa01a962945ce819734a78422351ae5542bb60368b56"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-18 16:38:23 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-11-18 16:38:27 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms) [cache miss]
+  Rendered devise/registrations/new.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 73ms (Views: 70.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-18 16:38:43 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fHhMB6Tkx6EiqUsgiuY26RkQx/9xS3dVRJPNW2wpQ68aXVjXRGXaIljB8hZEKkrAZMWRJZnQuR/Fm1D6SC5k5g==", "user"=>{"first_name"=>"maman", "last_name"=>"maman", "email"=>"zddzdzq@xn--zdz-ema.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zddzdzq@xn--zdz-ema.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "zddzdzq@xn--zdz-ema.com"], ["encrypted_password", "$2a$11$VkbrwZKURfSfbSTNYG1qRuDdE.cfhgNGi2UAo6WlHmPbG4u6ZTzE6"], ["created_at", "2018-11-18 15:38:43.356339"], ["updated_at", "2018-11-18 15:38:43.356339"], ["first_name", "maman"], ["last_name", "maman"]]
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/auth/facebook/callback?code=AQDJTf1zvbaYwinG7dDxJSnaQL-4lOYLfYYwPlYrDu6yTco4tC8jULOcUvuKmRjnouoilYtXoaUtfFKfIyoAcMpH_t2NiCQQp2MxznmvZdK36o2G_3DcVncOpJJIhJ4jN54L_1iaQwpKEfzSyo8V9-VmoA4aDrkxFfMxEVmoQ_PpMJIKfgIGVw6iVIzzicTqVlqFQpnNwPwCP6z-4RBV8BW1w1R3VkopJFVJM7gkqvoHfmvt-CwfktKnKX7b16VHKuRpr2f6B2xge8TAnxeVQiGkT-vQrXkQTELI19rFM6gbz6jCQkITn7YvOy37kN1OcYs&state=c196aa01a962945ce819734a78422351ae5542bb60368b56
+Completed 302 Found in 262ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/users/auth/facebook/callback?code=AQDJTf1zvbaYwinG7dDxJSnaQL-4lOYLfYYwPlYrDu6yTco4tC8jULOcUvuKmRjnouoilYtXoaUtfFKfIyoAcMpH_t2NiCQQp2MxznmvZdK36o2G_3DcVncOpJJIhJ4jN54L_1iaQwpKEfzSyo8V9-VmoA4aDrkxFfMxEVmoQ_PpMJIKfgIGVw6iVIzzicTqVlqFQpnNwPwCP6z-4RBV8BW1w1R3VkopJFVJM7gkqvoHfmvt-CwfktKnKX7b16VHKuRpr2f6B2xge8TAnxeVQiGkT-vQrXkQTELI19rFM6gbz6jCQkITn7YvOy37kN1OcYs&state=c196aa01a962945ce819734a78422351ae5542bb60368b56" for 127.0.0.1 at 2018-11-18 16:38:43 +0100
+
+AbstractController::ActionNotFound - The action 'failure' could not be found for Users::OmniauthCallbacksController:
+  actionpack (5.1.0) lib/abstract_controller/base.rb:119:in `process'
+  actionview (5.1.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.0) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.0) lib/action_controller/metal.rb:242:in `block in action'
+  devise (4.5.0) lib/devise/omniauth.rb:22:in `block in <top (required)>'
+  omniauth (1.8.1) lib/omniauth/strategy.rb:486:in `fail!'
+  omniauth-oauth2 (1.5.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+  omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:67:in `block in callback_phase'
+  omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:131:in `with_authorization_code!'
+  omniauth-facebook (5.0.0) lib/omniauth/strategies/facebook.rb:66:in `callback_phase'
+  omniauth (1.8.1) lib/omniauth/strategy.rb:236:in `callback_call'
+  omniauth (1.8.1) lib/omniauth/strategy.rb:188:in `call!'
+  omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.0) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.0) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.0) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.0) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/506e098ce05563e1/variables" for 127.0.0.1 at 2018-11-18 16:38:43 +0100
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2018-11-18 16:39:30 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 187ms (Views: 169.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-11-18 16:39:32 +0100
+Started GET "/users/auth/facebook/callback?code=AQD3qskVuTnTMbMrfj_0Ie_plVq7Q_kXSCU_rRwqimHrRF0nS4Ow_xihWlsOUgGgoPSIr_ydUx3xzE8qiDwSiuVCKcwEnwM_RP9MVjTEERddjYCjJyNYFkiVcWiSG8CGfNxacAKMp0eoz8bfIIRz5enteq1cRZwxBXwE__4mNQ6K_d6ZhC47Z1rRuWsxx19EtEekjgp4B3QwfNyfcNDIAoJGdeWjQ8aIablQ5jzFuJ0QNHSvgGjLN7AMly02LjOUf2Jr4VZNIz8_SiCU3hGsjF6ewY3GGBCtxtFLFaOCF4YJFuVvaLAaCF6exB67RV9yYvY&state=85a10c5b3ccf912ad96b977edf615fdd70b29b968bd0e330" for 127.0.0.1 at 2018-11-18 16:39:33 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQD3qskVuTnTMbMrfj_0Ie_plVq7Q_kXSCU_rRwqimHrRF0nS4Ow_xihWlsOUgGgoPSIr_ydUx3xzE8qiDwSiuVCKcwEnwM_RP9MVjTEERddjYCjJyNYFkiVcWiSG8CGfNxacAKMp0eoz8bfIIRz5enteq1cRZwxBXwE__4mNQ6K_d6ZhC47Z1rRuWsxx19EtEekjgp4B3QwfNyfcNDIAoJGdeWjQ8aIablQ5jzFuJ0QNHSvgGjLN7AMly02LjOUf2Jr4VZNIz8_SiCU3hGsjF6ewY3GGBCtxtFLFaOCF4YJFuVvaLAaCF6exB67RV9yYvY", "state"=>"85a10c5b3ccf912ad96b977edf615fdd70b29b968bd0e330"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-18 16:39:33 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
