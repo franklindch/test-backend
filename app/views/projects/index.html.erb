@@ -2,13 +2,21 @@
   <div class="card">
     <h3><%= project.name %></h3>
     <%= link_to 'Delete', project_path(project), method: :delete  %>
-    <%= link_to 'Edit', edit_project_path(project)  %>
+    <%= link_to 'Edit', edit_project_path(project), remote: true %>
+    <div class="task-form"></div>
+    <% project.tasks.each do |task| %>
+      <%= task.description %>
+      <%= task.status %>
+      <%= task.priority %>
+      <%= task.deadline %>
+      <%= link_to 'Delete', project_task_path(project, task), method: :delete  %>
+      <%= link_to 'Edit', edit_project_task_path(project, task), remote: true %>
+    <% end %>
+    <%= link_to 'Add task', new_project_task_path(project), remote: true %>
     <hr>
-    <div class="new-project-form"></div>
-    <%= link_to 'Add task', new_task_project_path(project) %>
   </div>
 <% end %>
 
-<div class="new-project-form"></div>
+<div class="project-form"></div>
 
 <%= link_to 'Add project', new_project_path, remote: true  %>

@@ -14,7 +14,9 @@ class TasksController < ApplicationController
     @task.save ? (redirect_to projects_path) : (render :new)
   end
 
-  def edit; end
+  def edit
+    respond_to :html, :js
+  end
 
   def update
     @task.update(task_params)
@@ -38,7 +40,7 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(
-      :status, :priority, :deadline, :project_id
+      :description, :status, :priority, :deadline, :project_id
     )
   end
 end
