@@ -1,9 +1,11 @@
 <% @projects.each do |project| %>
+
   <div class="card">
     <h3><%= project.name %></h3>
     <%= link_to 'Delete', project_path(project), method: :delete  %>
     <%= link_to 'Edit', edit_project_path(project), remote: true %>
     <div class="task-form"></div>
+
     <% project.tasks.each do |task| %>
       <%= task.description %>
       <%= task.status %>
@@ -11,10 +13,22 @@
       <%= task.deadline %>
       <%= link_to 'Delete', project_task_path(project, task), method: :delete  %>
       <%= link_to 'Edit', edit_project_task_path(project, task), remote: true %>
+
+      <% task.comments.each do |comment| %>
+        <%= comment.description %>
+        <%= comment.user %>
+        <%= link_to 'Delete', task_comment_path(task, comment), method: :delete  %>
+      <% end %>
+
+    <div class="comment-form"></div>
+      <%= link_to 'Add comment', new_task_comment_path(task), remote: true %>
+
     <% end %>
+
     <%= link_to 'Add task', new_project_task_path(project), remote: true %>
     <hr>
   </div>
+
 <% end %>
 
 <div class="project-form"></div>
