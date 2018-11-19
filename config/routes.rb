@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   resources :projects, except: [:show] do
     resources :tasks, except: [:show, :index]
   end
+
+  resources :tasks, only: [] do
+    resources :comments, only: [:new, :create, :destroy]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

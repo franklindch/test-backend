@@ -6776,3 +6776,284 @@ Processing by ProjectsController#index as HTML
 Completed 200 OK in 74ms (Views: 61.7ms | ActiveRecord: 4.6ms)
 
 
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 09:20:13 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered projects/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 240ms (Views: 206.9ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 09:20:20 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (51.2ms) [cache miss]
+  Rendered tasks/new.js.erb (54.3ms)
+Completed 200 OK in 94ms (Views: 58.3ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/projects/5/tasks" for 127.0.0.1 at 2018-11-19 09:20:53 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yDcRPbsw488Ypu22ntHjq9I7bq/AgzuBT6xVq5zuNvQWVYX+1RkeWDuviS6nuhgACqSGO2j1gBiA9672ytejow==", "task"=>{"description"=>"dzadaz", "status"=>"2", "priority"=>"1", "deadline(1i)"=>"2018", "deadline(2i)"=>"11", "deadline(3i)"=>"19"}, "button"=>"", "project_id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("status", "priority", "deadline", "created_at", "updated_at", "project_id", "description") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["status", 2], ["priority", 1], ["deadline", "2018-11-19"], ["created_at", "2018-11-19 08:20:53.976671"], ["updated_at", "2018-11-19 08:20:53.976671"], ["project_id", 5], ["description", "dzadaz"]]
+  [1m[35m (27.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 39ms (ActiveRecord: 28.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 09:20:54 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 30ms (Views: 22.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 09:21:30 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/tasks/2/comments/new" for 127.0.0.1 at 2018-11-19 09:21:32 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (4.7ms) [cache miss]
+  Rendered comments/new.js.erb (5.8ms)
+Completed 200 OK in 30ms (Views: 8.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 09:22:49 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 52ms (Views: 26.1ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/tasks/2/comments/new" for 127.0.0.1 at 2018-11-19 09:22:53 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (6.3ms) [cache miss]
+  Rendered comments/new.js.erb (7.7ms)
+Completed 200 OK in 24ms (Views: 10.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/tasks/2/comments" for 127.0.0.1 at 2018-11-19 09:22:57 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"40DlgBsGPO0XbTtuz/yFdaAAX5ykjuLbDzwykvb4644gRmJt3H7Tk2ui4PW2y1E07+hi/xgN+TpVMnpSe9INKQ==", "comment"=>{"description"=>"dzadz", "file"=>"dza"}, "button"=>"", "task_id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (28.3ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "dzadz"], ["file", "dza"], ["task_id", 2], ["user_id", 6], ["created_at", "2018-11-19 08:22:57.638253"], ["updated_at", "2018-11-19 08:22:57.638253"]]
+  [1m[35m (37.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 100ms (ActiveRecord: 69.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 09:22:57 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 81ms (Views: 67.7ms | ActiveRecord: 6.2ms)
+
+
+Started DELETE "/tasks/2/comments/1" for 127.0.0.1 at 2018-11-19 09:23:00 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Te7uIBDR46IK2CLOJiHKt36p/vNx3V+tnV6YoxQdOLIrejieImGLkKs9Gnuf14wkgRJhyIgfJXcb7XP1W8kZEA==", "task_id"=>"2", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 1]]
+  [1m[35m (33.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 41ms (ActiveRecord: 34.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 09:23:00 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 41ms (Views: 28.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 09:23:03 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (12.1ms) [cache miss]
+  Rendered tasks/new.js.erb (16.3ms)
+Completed 200 OK in 44ms (Views: 27.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 10:14:51 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 4099ms (Views: 4060.8ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/tasks/2/comments/new" for 127.0.0.1 at 2018-11-19 10:14:58 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (71.2ms) [cache miss]
+  Rendered comments/new.js.erb (73.1ms)
+Completed 200 OK in 117ms (Views: 80.1ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/tasks/2/comments" for 127.0.0.1 at 2018-11-19 10:15:00 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/i+MOqAjbuai4DXe8pxhlZ+OlkoIA6rBndAAADDFd8Q9KQvXZ1uBmN4v7kWLq7XU0GarKbSAsSDH3kjAve+RYw==", "comment"=>{"description"=>"zdazd", "file_cache"=>""}, "button"=>"", "task_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: :file_cache
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "comments" ("description", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "zdazd"], ["task_id", 2], ["user_id", 6], ["created_at", "2018-11-19 09:15:00.982133"], ["updated_at", "2018-11-19 09:15:00.982133"]]
+  [1m[35m (38.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 55ms (ActiveRecord: 40.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 10:15:01 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 10:15:03 +0100
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 65ms (Views: 55.8ms | ActiveRecord: 5.6ms)
+
+
+Started DELETE "/tasks/2/comments/2" for 127.0.0.1 at 2018-11-19 10:15:06 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"I035FKxgUHnk6E6vNFowvMZXxzWJxog2wTRuSo1UNqxF2S+qntA4S0UNdhqNrHYvOexYDnAE8uxHh4UcwoAXDg==", "task_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 2]]
+  [1m[35m (55.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 69ms (ActiveRecord: 57.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 10:15:06 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  Rendered projects/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 67ms (Views: 52.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/tasks/2/comments/new" for 127.0.0.1 at 2018-11-19 10:15:07 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (23.6ms) [cache miss]
+  Rendered comments/new.js.erb (27.5ms)
+Completed 200 OK in 52ms (Views: 37.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/tasks/2/comments" for 127.0.0.1 at 2018-11-19 10:15:15 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J/2hvQTIV8yPewH5ZBUuiS61oiBHZKKA36doFdv+zn3k+yZQw7C4svO02mIdIvrIYV2fQ/vnuWGFqSDVVtQo2g==", "comment"=>{"description"=>"dzad", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007fb788775028 @tempfile=#<Tempfile:/tmp/RackMultipart20181119-22256-1kya87g.odt>, @original_filename="build a restful json api.odt", @content_type="application/vnd.oasis.opendocument.text", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"build a restful json api.odt\"\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n">, "file_cache"=>""}, "button"=>"", "task_id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: :file_cache
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "dzad"], ["file", "vugpbn0i24nihmwwad5p.odt"], ["task_id", 2], ["user_id", 6], ["created_at", "2018-11-19 09:15:16.017466"], ["updated_at", "2018-11-19 09:15:16.017466"]]
+  [1m[35m (28.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 152ms (ActiveRecord: 34.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 10:15:16 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 100ms (Views: 84.4ms | ActiveRecord: 6.3ms)
+
+
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]

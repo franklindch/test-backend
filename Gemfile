@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.4.5'
 
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
 gem 'devise'
 gem 'figaro'
 gem 'omniauth-facebook'
