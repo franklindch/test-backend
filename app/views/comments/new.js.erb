@@ -1,1 +1,1 @@
-$('.comment-form').replaceWith('<%= j render(partial: 'comments/form', locals: { task: @task, comment: @comment } ) %>');
+$('#comment_form_<%= @task.id %>').replaceWith('<%= j render(partial: 'comments/form', locals: { task: @task, comment: @comment } ) %>');

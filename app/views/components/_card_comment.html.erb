@@ -2,7 +2,6 @@
   <div class="card mt-2">
     <div class="card-body">
       <p class="mt-3"><%= comment.description %></p>
-      <!-- <p class="card-text"><small class="text-muted">By <%= comment.user.first_name %></small></p> -->
       <div class="d-flex justify-content-between">
         <%= link_to "Upload file", comment.file_url, class: 'comment-links' %>
         <%= link_to 'Delete', task_comment_path(task, comment), method: :delete, class: 'comment-links'%>
@@ -10,4 +9,3 @@
     </div>
   </div>
 <% end %>
-<div class="comment-form"></div>

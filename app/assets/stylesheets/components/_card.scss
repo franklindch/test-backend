@@ -1,5 +1,5 @@
 .card-task {
-  color: $green;
+  color: black;
   background-color: white;
 }
 
@@ -32,4 +32,8 @@ a {
   &:hover {
     color: $blue;
   }
+}
+
+h2 {
+  color: $green;
 }

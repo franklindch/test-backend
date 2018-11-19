@@ -4,9 +4,9 @@
     <div class="col-sm-4 mt-3">
       <div class="card card-project">
         <%= render 'components/card_project', project: project, index: index %>
-        <%= link_to 'Add task', new_project_task_path(project), remote: true, class: 'task_button card-project ml-4 mb-2' %>
+        <div id="task_form_<%= project.id %>"></div>
+        <%= link_to 'Add task', new_project_task_path(project), remote: true, class: 'task_button card-project ml-4 mb-2 mt-2' %>
       </div>
-
     </div>
     <% end %>
   </div>

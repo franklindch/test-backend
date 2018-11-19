@@ -17,6 +17,7 @@
 
 
         <%= render 'components/card_comment', task: task, comments: task.comments %>
+        <div id="comment_form_<%= task.id %>"></div>
         <div class="d-flex justify-content-between mt-3">
           <%= link_to 'Add comment', new_task_comment_path(task), remote: true, class: 'task-links' %>
           <div class="d-flex justify-content-between">
@@ -28,4 +29,3 @@
     </div>
   <% end %>
 <% end %>
-<div class="task-form"></div>
