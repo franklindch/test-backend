@@ -1,0 +1,23 @@
+<% if tasks.empty? %>
+  <h5 class="mt-3">No tasks yet</h5>
+
+<% else %>
+  <% tasks.each do |task| %>
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <p class="card-text"><%= task.description %></p>
+          <%= task.status %>
+        </div>
+        <%= task.priority %>
+        <%= task.deadline %>
+        <%= link_to 'Delete', project_task_path(project, task), method: :delete  %>
+        <%= link_to 'Edit', edit_project_task_path(project, task), remote: true %>
+        <div class="badge badge-danger">Completed?</div>
+        <%= render 'comments/show', task: task, comments: task.comments %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="task-form"></div>

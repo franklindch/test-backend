@@ -1,36 +1,12 @@
-<% @projects.each do |project| %>
-
-  <div class="card mt-3">
-    <h3><%= project.name %></h3>
-    <%= link_to 'Delete', project_path(project), method: :delete  %>
-    <%= link_to 'Edit', edit_project_path(project), remote: true %>
-    <div class="task-form"></div>
-
-    <% project.tasks.each do |task| %>
-      <%= task.description %>
-      <%= task.status %>
-      <%= task.priority %>
-      <%= task.deadline %>
-      <%= link_to 'Delete', project_task_path(project, task), method: :delete  %>
-      <%= link_to 'Edit', edit_project_task_path(project, task), remote: true %>
-
-      <% task.comments.each do |comment| %>
-        <%= comment.description %>
-        <%= comment.user %>
-        <%= link_to "Download File", comment.file_url %>
-        <%= link_to 'Delete', task_comment_path(task, comment), method: :delete  %>
-      <% end %>
-
-    <div class="comment-form"></div>
-      <%= link_to 'Add comment', new_task_comment_path(task), remote: true %>
-
+<div class="container-fluid">
+  <div class="row mt-4">
+    <div class="col-sm-2">
+    <% @projects.each do |project| %>
+      <%= render 'components/card_project', project: project %>
     <% end %>
-
-    <%= link_to 'Add task', new_project_task_path(project), remote: true %>
-    <hr>
+    </div>
   </div>
-
-<% end %>
+</div>
 
 <div class="project-form"></div>
 
