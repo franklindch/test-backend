@@ -10298,3 +10298,968 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:31:24 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered components/_card_project.html.erb (19.2ms)
+  Rendered projects/index.html.erb within layouts/application (30.3ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 7.7ms)
+
+
+
+NoMethodError - undefined method `delete' for :status:Symbol:
+  app/models/task.rb:5:in `<class:Task>'
+  app/models/task.rb:1:in `<top (required)>'
+  app/views/components/_card_project.html.erb:11:in `_app_views_components__card_project_html_erb__2038736388648759133_47090423081720'
+  app/views/projects/index.html.erb:5:in `block in _app_views_projects_index_html_erb__4337301828441536613_47090427394200'
+  app/views/projects/index.html.erb:4:in `_app_views_projects_index_html_erb__4337301828441536613_47090427394200'
+
+Started POST "/__better_errors/0eddd36dfc9e3b62/variables" for 127.0.0.1 at 2018-11-19 11:31:24 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:31:35 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (9.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (13.0ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (6.4ms)
+  Rendered components/_card_task.html.erb (25.8ms)
+  Rendered components/_card_project.html.erb (26.5ms)
+  Rendered projects/index.html.erb within layouts/application (56.8ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 13.3ms)
+
+
+
+NoMethodError - undefined method `completed?' for #<Task:0x00007f8af83b5e68>
+Did you mean?  completed!:
+  app/views/tasks/_completed.html.erb:1:in `_app_views_tasks__completed_html_erb__1944339079168909016_70117423610260'
+  app/views/components/_card_task.html.erb:17:in `block in _app_views_components__card_task_html_erb___134957245335847888_47090438821360'
+  app/views/components/_card_task.html.erb:5:in `_app_views_components__card_task_html_erb___134957245335847888_47090438821360'
+  app/views/components/_card_project.html.erb:11:in `_app_views_components__card_project_html_erb__2038736388648759133_47090438368060'
+  app/views/projects/index.html.erb:5:in `block in _app_views_projects_index_html_erb__4337301828441536613_47090438000620'
+  app/views/projects/index.html.erb:4:in `_app_views_projects_index_html_erb__4337301828441536613_47090438000620'
+
+Started POST "/__better_errors/e3a7641b05af854b/variables" for 127.0.0.1 at 2018-11-19 11:31:35 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:31:44 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.8ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (27.7ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (2.5ms) [cache miss]
+  Rendered components/_card_task.html.erb (44.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (45.5ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (54.7ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 299ms (Views: 287.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:31:45 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/tasks/2/completed" for 127.0.0.1 at 2018-11-19 11:31:49 +0100
+Processing by TasksController#completed as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+
+
+RuntimeError - :
+  app/controllers/tasks_controller.rb:32:in `completed'
+
+Started POST "/__better_errors/52170d912a96326c/variables" for 127.0.0.1 at 2018-11-19 11:31:49 +0100
+Started GET "/" for 127.0.0.1 at 2018-11-19 11:35:54 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (14.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (24.1ms) [cache miss]
+  [1m[36mTask Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (34.8ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.8ms) [cache miss]
+  Rendered components/_card_task.html.erb (80.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (81.5ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (113.4ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 386ms (Views: 368.5ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:35:55 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/tasks/2/completed" for 127.0.0.1 at 2018-11-19 11:35:57 +0100
+Processing by TasksController#completed as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", 1], ["updated_at", "2018-11-19 10:35:57.566122"], ["id", 2]]
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 27ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:35:57 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.1ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.8ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (7.9ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.8ms) [cache miss]
+  Rendered components/_card_task.html.erb (17.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (18.3ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (25.7ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 48ms (Views: 40.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:35:57 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/tasks/2/completed" for 127.0.0.1 at 2018-11-19 11:36:00 +0100
+Processing by TasksController#completed as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 21ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:36:00 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (8.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (13.6ms) [cache miss]
+  [1m[36mTask Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.3ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (8.3ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (2.9ms) [cache miss]
+  Rendered components/_card_task.html.erb (25.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (27.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (50.5ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 81ms (Views: 65.1ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:36:00 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/tasks/2/completed" for 127.0.0.1 at 2018-11-19 11:36:02 +0100
+Processing by TasksController#completed as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Load (2.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 32ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:36:02 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (3.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (5.8ms) [cache miss]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (7.8ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.5ms) [cache miss]
+  Rendered components/_card_task.html.erb (16.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (18.2ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (29.8ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 54ms (Views: 44.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:36:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:36:17 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (11.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (18.2ms) [cache miss]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.7ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (11.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (2.5ms) [cache miss]
+  Rendered components/_card_task.html.erb (24.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (27.4ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (56.2ms)
+  Rendered components/_navbar.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 90ms (Views: 74.1ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:36:18 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:36:30 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.0ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.7ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (7.3ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.9ms) [cache miss]
+  Rendered components/_card_task.html.erb (16.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (17.3ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (25.7ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 48ms (Views: 38.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:36:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:36:44 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.2ms) [cache miss]
+  [1m[36mTask Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (4.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (13.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (14.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (23.8ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 49ms (Views: 42.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:36:44 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:36:53 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (3.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (5.8ms) [cache miss]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (10.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (3.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (21.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (21.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (34.2ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 58ms (Views: 48.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:36:53 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:37:20 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.8ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.5ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (6.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (13.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (14.0ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (21.7ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 46ms (Views: 35.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:37:20 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:37:25 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (3.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (7.6ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (8.3ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.3ms) [cache miss]
+  Rendered components/_card_task.html.erb (14.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (14.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (25.4ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:37:25 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:37:46 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (3.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (5.1ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (4.3ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.3ms) [cache miss]
+  Rendered components/_card_task.html.erb (11.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (12.2ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (20.3ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:37:46 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:38:38 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.3ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (4.0ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (2.9ms) [cache miss]
+  Rendered components/_card_task.html.erb (13.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (14.2ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (22.9ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 41ms (Views: 34.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:38:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:39:28 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (4.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (7.6ms) [cache miss]
+  [1m[36mTask Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (6.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (2.1ms) [cache miss]
+  Rendered components/_card_task.html.erb (19.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (21.2ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (35.2ms)
+  Rendered components/_navbar.html.erb (1.1ms) [cache miss]
+Completed 200 OK in 71ms (Views: 55.1ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:39:28 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:39:42 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (11.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (19.9ms) [cache miss]
+  [1m[36mTask Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.9ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (10.0ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (27.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (29.2ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (63.2ms)
+  Rendered components/_navbar.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 111ms (Views: 92.8ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:39:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects/4/tasks/new" for 127.0.0.1 at 2018-11-19 11:40:00 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (104.2ms) [cache miss]
+  Rendered tasks/new.js.erb (107.8ms)
+Completed 200 OK in 131ms (Views: 117.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/projects/4/tasks" for 127.0.0.1 at 2018-11-19 11:40:16 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FHE1MyDN/GG24xkiU8T8PXwUNfa7vw8gtCiy4yuVzseyumNyahBqTdp0aa49jdu6EGA2dxvYiEMs6B+SGqG8bg==", "task"=>{"description"=>"yepyep", "status"=>"0", "priority"=>"", "deadline(1i)"=>"2018", "deadline(2i)"=>"11", "deadline(3i)"=>"19"}, "button"=>"", "project_id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.0ms)
+
+
+
+ArgumentError - '0' is not a valid status:
+  app/controllers/tasks_controller.rb:12:in `create'
+
+Started POST "/__better_errors/fe7c987f8402432a/variables" for 127.0.0.1 at 2018-11-19 11:40:16 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 11:41:05 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (5.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (8.8ms) [cache miss]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (6.7ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (2.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (18.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (19.7ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (34.0ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 59ms (Views: 48.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2018-11-19 11:41:05 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/projects/4/tasks/new" for 127.0.0.1 at 2018-11-19 11:41:06 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"4"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (97.5ms) [cache miss]
+  Rendered tasks/new.js.erb (104.6ms)
+Completed 200 OK in 134ms (Views: 118.2ms | ActiveRecord: 3.3ms)
+
+

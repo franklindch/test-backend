@@ -7,13 +7,14 @@
       <div class="card-body">
         <div class="d-flex justify-content-between">
           <p class="card-text"><%= task.description %></p>
-          <%= task.status %>
+          <%= render 'tasks/completed', task: task %>
         </div>
         <%= task.priority %>
         <%= task.deadline %>
         <%= link_to 'Delete', project_task_path(project, task), method: :delete  %>
         <%= link_to 'Edit', edit_project_task_path(project, task), remote: true %>
-        <div class="badge badge-danger">Completed?</div>
+
+
         <%= render 'comments/show', task: task, comments: task.comments %>
       </div>
     </div>
