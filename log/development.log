@@ -12641,3 +12641,159 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:00:22 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.4ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (426.7ms)
+Completed 200 OK in 859ms (Views: 781.7ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:00:57 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 61ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:01:30 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.6ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:04:48 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 300ms (Views: 282.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:05:16 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:07:17 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.3ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 110ms (Views: 107.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:07:18 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.9ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 101ms (Views: 97.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:07:41 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.9ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 9798ms (Views: 9794.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:09:43 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.2ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 104ms (Views: 101.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:12:38 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.2ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (429.4ms)
+Completed 200 OK in 1422ms (Views: 1420.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:13:13 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (17.3ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (107.6ms)
+Completed 200 OK in 178ms (Views: 173.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:13:14 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 103ms (Views: 95.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:14:03 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.4ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (67.2ms)
+Completed 200 OK in 133ms (Views: 129.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:14:12 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-11-19 14:14:24 +0100
+Started GET "/users/auth/facebook/callback?code=AQCPzy508IcPwOnDm37JgZ0HjMc4Jk8I-UAzgzsI8sJv_jaJTtukamQn_tbIuj6DYpoA-luFLXawJbFREaCNDra0wt5ZR7vMaNJy3lafvMdsEkaO0djl7rkkhuJ7z1XUrBd7S0P_EshQEB3tpDAbil-IjIloTGMINDDfBIdbrLWURk_SCzeh2KkPnhIBXJKOeVUnfUWaCaosPGPInm8x83NJGSkzkjC4RVydqcR5piZOH-ArV9utPVo8nX-wiBg93MNMsDf4y4MXLNQm3B-k2cQdtJyRKJy0VhTTzBjcDUwWuZYGMluMzRzGi1LV_U00VbU&state=5b0b2798195c0109cdf35cd8e41cd7daac807858b833320b" for 127.0.0.1 at 2018-11-19 14:14:26 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCPzy508IcPwOnDm37JgZ0HjMc4Jk8I-UAzgzsI8sJv_jaJTtukamQn_tbIuj6DYpoA-luFLXawJbFREaCNDra0wt5ZR7vMaNJy3lafvMdsEkaO0djl7rkkhuJ7z1XUrBd7S0P_EshQEB3tpDAbil-IjIloTGMINDDfBIdbrLWURk_SCzeh2KkPnhIBXJKOeVUnfUWaCaosPGPInm8x83NJGSkzkjC4RVydqcR5piZOH-ArV9utPVo8nX-wiBg93MNMsDf4y4MXLNQm3B-k2cQdtJyRKJy0VhTTzBjcDUwWuZYGMluMzRzGi1LV_U00VbU", "state"=>"5b0b2798195c0109cdf35cd8e41cd7daac807858b833320b"}
+  [1m[36mUser Load (39.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "facebook"], ["uid", "10156697465052744"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 289ms (ActiveRecord: 69.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:14:28 +0100
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (12.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (14.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (2.0ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (130.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (421.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (487.2ms) [cache miss]
+  [1m[36mTask Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (7.8ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (15.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (42.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (46.4ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (617.7ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 727ms (Views: 589.0ms | ActiveRecord: 76.2ms)
+
+
