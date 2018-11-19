@@ -1,1 +1,1 @@
-$('.task-form').replaceWith('<%= j render(partial: 'tasks/form', locals: { project: @project, task: @task } ) %>');
+$("#edit_task_form_<%= @project.id %>").replaceWith('<%= j render(partial: 'tasks/form', locals: { project: @project, task: @task } ) %>');
