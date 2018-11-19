@@ -3,7 +3,6 @@
   background-color: white;
 }
 
-
 .card-project {
   color: white;
   background-color: $green;
@@ -16,20 +15,23 @@ a {
 .project-links {
   color: white;
   &:hover {
-    color: $blue;
+    opacity: 0.7;
+    color: white;
   }
 }
 
 .task-links {
   color: $blue;
   &:hover {
-    color: $light-blue;
+    opacity: 0.7;
+    color: $blue;
   }
 }
 
 .comment-links {
-  color: $light-blue;
+  color: $blue;
   &:hover {
+    opacity: 0.7;
     color: $blue;
   }
 }
