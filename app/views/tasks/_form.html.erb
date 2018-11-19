@@ -1,0 +1,9 @@
+<%= simple_form_for [@project, @task] do |f| %>
+  <%= f.input :status, label: 'Nom' %>
+  <%= f.input :status, label: 'Nom' %>
+  <%= f.input :priority, label: 'Nom' %>
+  <%= f.input :deadline, label: 'Nom' %>
+  <div class="btn btn-primary">
+    <%= f.button :button, "Valider et terminer" %>
+  </div>
+<% end %>

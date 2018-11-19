@@ -1,7 +1,12 @@
 <% @projects.each do |project| %>
-  <h3><%= project.name %></h3>
-  <%= link_to 'Delete', project_path(project), method: :delete  %>
-  <%= link_to 'Edit', edit_project_path(project)  %>
+  <div class="card">
+    <h3><%= project.name %></h3>
+    <%= link_to 'Delete', project_path(project), method: :delete  %>
+    <%= link_to 'Edit', edit_project_path(project)  %>
+    <hr>
+    <div class="new-project-form"></div>
+    <%= link_to 'Add task', new_task_project_path(project) %>
+  </div>
 <% end %>
 
 <div class="new-project-form"></div>
