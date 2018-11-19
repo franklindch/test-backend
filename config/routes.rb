@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   resources :tasks, only: [] do
     resources :comments, only: [:new, :create, :destroy]
   end
+
+  get 'tasks/:id/completed', to: 'tasks#completed', as: 'completed_task'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

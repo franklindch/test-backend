@@ -1,0 +1,5 @@
+<% if task.completed? %>
+  <div class="badge badge-success h-50">Completed</div>
+<% else %>
+  <%= link_to '<div class="badge badge-danger h-50">Pending</div>'.html_safe, completed_task_path(task) %>
+<% end %>
