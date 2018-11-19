@@ -1,0 +1,6 @@
+<%= simple_form_for @project do |f| %>
+  <%= f.input :name, label: 'Nom' %>
+  <div class="btn btn-primary">
+    <%= f.button :button, "Valider et terminer" %>
+  </div>
+<% end %>
