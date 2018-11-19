@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.5'
 
+gem 'bootstrap', '~> 4.1.3'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem 'devise'
