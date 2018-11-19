@@ -11,7 +11,7 @@
     <%= render 'components/card_task', project: project, tasks: project.tasks %>
 
 
-    <%= link_to 'Add task', new_project_task_path(project), remote: true %>
+    <%= link_to 'Add task', new_project_task_path(project), remote: true, class: 'add_task_button' %>
 
     <hr>
   </div>

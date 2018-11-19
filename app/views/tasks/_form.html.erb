@@ -1,7 +1,7 @@
 <%= simple_form_for [@project, @task] do |f| %>
   <%= f.input :description, label: 'Description' %>
   <%= f.input :priority, label: 'Priorité' %>
-  <%= f.input :deadline, label: 'Deadline' %>
+  <%= f.input :deadline, as: :string, label: 'Deadline', input_html: {class: "deadline-datepicker"} %>
   <div class="btn btn-primary">
     <%= f.button :button, "Valider et terminer" %>
   </div>

@@ -12797,3 +12797,1915 @@ Processing by ProjectsController#index as HTML
 Completed 200 OK in 727ms (Views: 589.0ms | ActiveRecord: 76.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:22:59 +0100
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (128.8ms) [cache miss]
+  Rendered components/_card_task.html.erb (294.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (332.2ms) [cache miss]
+  [1m[36mTask Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (2.8ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (5.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (20.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (21.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (416.1ms)
+  Rendered components/_navbar.html.erb (1.2ms) [cache miss]
+Completed 200 OK in 3269ms (Views: 3178.9ms | ActiveRecord: 29.6ms)
+
+
+Started GET "/tasks/4/comments/new" for 127.0.0.1 at 2018-11-19 14:23:14 +0100
+Processing by CommentsController#new as HTML
+  Parameters: {"task_id"=>"4"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 69ms (ActiveRecord: 3.0ms)
+
+
+
+ActionController::UnknownFormat - CommentsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/4d2d86e57b92f546/variables" for 127.0.0.1 at 2018-11-19 14:23:14 +0100
+Started GET "/tasks/4/comments/new" for 127.0.0.1 at 2018-11-19 14:23:23 +0100
+Processing by CommentsController#new as HTML
+  Parameters: {"task_id"=>"4"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 29ms (ActiveRecord: 2.2ms)
+
+
+
+ActionController::UnknownFormat - CommentsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/c53bee214ba18748/variables" for 127.0.0.1 at 2018-11-19 14:23:23 +0100
+Started GET "/tasks/3/comments/new" for 127.0.0.1 at 2018-11-19 14:23:26 +0100
+Processing by CommentsController#new as HTML
+  Parameters: {"task_id"=>"3"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 61ms (ActiveRecord: 2.9ms)
+
+
+
+ActionController::UnknownFormat - CommentsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/0de8001004838827/variables" for 127.0.0.1 at 2018-11-19 14:23:27 +0100
+Started GET "/tasks/3/comments/new" for 127.0.0.1 at 2018-11-19 14:25:33 +0100
+Processing by CommentsController#new as HTML
+  Parameters: {"task_id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 15ms (ActiveRecord: 0.7ms)
+
+
+
+ActionController::UnknownFormat - CommentsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/67c885e12412a796/variables" for 127.0.0.1 at 2018-11-19 14:25:33 +0100
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:25:34 +0100
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (6.3ms) [cache miss]
+  Rendered components/_card_task.html.erb (16.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (18.3ms) [cache miss]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (4.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (5.5ms) [cache miss]
+  Rendered components/_card_task.html.erb (16.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (17.0ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (37.7ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 55ms (Views: 46.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/tasks/4/comments/new" for 127.0.0.1 at 2018-11-19 14:25:36 +0100
+Processing by CommentsController#new as HTML
+  Parameters: {"task_id"=>"4"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 66ms (ActiveRecord: 2.6ms)
+
+
+
+ActionController::UnknownFormat - CommentsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/1225f3bbb8850c4a/variables" for 127.0.0.1 at 2018-11-19 14:25:36 +0100
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:26:01 +0100
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.9ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (570.1ms)
+  Rendered components/_card_task.html.erb (590.8ms)
+  Rendered components/_card_project.html.erb (597.5ms)
+  Rendered projects/index.html.erb within layouts/application (606.1ms)
+Completed 500 Internal Server Error in 617ms (ActiveRecord: 4.8ms)
+
+
+
+NameError - undefined local variable or method `comment' for #<#<Class:0x0000555e09c7d078>:0x00007f7d006342a8>
+Did you mean?  comments:
+  app/views/comments/_show.html.erb:18:in `_app_views_comments__show_html_erb___2974615955382003345_70087427266440'
+  app/views/components/_card_task.html.erb:18:in `block in _app_views_components__card_task_html_erb__2846982134499422999_70087427173940'
+  app/views/components/_card_task.html.erb:5:in `_app_views_components__card_task_html_erb__2846982134499422999_70087427173940'
+  app/views/components/_card_project.html.erb:11:in `_app_views_components__card_project_html_erb___2868794991384260826_70087303645540'
+  app/views/projects/index.html.erb:5:in `block in _app_views_projects_index_html_erb__4279944098520604276_70087427073600'
+  app/views/projects/index.html.erb:4:in `_app_views_projects_index_html_erb__4279944098520604276_70087427073600'
+
+Started POST "/__better_errors/6e7d15c43b6258d9/variables" for 127.0.0.1 at 2018-11-19 14:26:02 +0100
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:26:42 +0100
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (11.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (13.0ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (12.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (13.4ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (29.1ms)
+  Rendered components/_navbar.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 45ms (Views: 39.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/tasks/4/comments/new" for 127.0.0.1 at 2018-11-19 14:26:44 +0100
+Processing by CommentsController#new as HTML
+  Parameters: {"task_id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 53ms (ActiveRecord: 1.9ms)
+
+
+
+ActionController::UnknownFormat - CommentsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/8ca0dd462621c99d/variables" for 127.0.0.1 at 2018-11-19 14:26:44 +0100
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:27:23 +0100
+Processing by TasksController#new as HTML
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 81ms (ActiveRecord: 2.3ms)
+
+
+
+ActionController::UnknownFormat - TasksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/f96f7f0298a0580b/variables" for 127.0.0.1 at 2018-11-19 14:27:24 +0100
+Started GET "/projects/new" for 127.0.0.1 at 2018-11-19 14:27:28 +0100
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 62ms (ActiveRecord: 1.9ms)
+
+
+
+ActionController::UnknownFormat - ProjectsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/0c06e685f6fe05b4/variables" for 127.0.0.1 at 2018-11-19 14:27:28 +0100
+Started GET "/projects/5/tasks/3/edit" for 127.0.0.1 at 2018-11-19 14:28:43 +0100
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TasksController#edit as HTML
+  Parameters: {"project_id"=>"5", "id"=>"3"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 358ms (ActiveRecord: 37.2ms)
+
+
+
+ActionController::UnknownFormat - TasksController#edit is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/ae59186d1aebb52b/variables" for 127.0.0.1 at 2018-11-19 14:28:44 +0100
+Started GET "/projects/5/tasks/2" for 127.0.0.1 at 2018-11-19 14:29:23 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/projects/5/tasks/2"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-11-19 14:29:30 +0100
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (2.1ms) [cache miss]
+  [1m[36mComment Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (150.1ms) [cache miss]
+  Rendered components/_card_task.html.erb (445.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (493.8ms) [cache miss]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (1.9ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (6.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (16.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (17.4ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (523.3ms)
+  Rendered components/_navbar.html.erb (3.6ms) [cache miss]
+Completed 200 OK in 1167ms (Views: 1135.5ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/projects/4/edit" for 127.0.0.1 at 2018-11-19 14:29:35 +0100
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (443.4ms) [cache miss]
+  Rendered projects/edit.html.erb within layouts/application (454.7ms)
+  Rendered components/_navbar.html.erb (3.0ms) [cache miss]
+Completed 200 OK in 557ms (Views: 523.7ms | ActiveRecord: 2.2ms)
+
+
+Started PATCH "/projects/4" for 127.0.0.1 at 2018-11-19 14:29:39 +0100
+Processing by ProjectsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FZP+eppMcVjNY//ZhugIu6vwNLBbb9JzM8MRZ2bBqTsR8d5chiG0cpvQ+Xqyph1xG5Xg3qq/lneYLEj1hNTMLw==", "project"=>{"name"=>"zddazzd"}, "button"=>"", "id"=>"4"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (28.3ms)[0m  [1m[33mUPDATE "projects" SET "name" = $1, "updated_at" = $2 WHERE "projects"."id" = $3[0m  [["name", "zddazzd"], ["updated_at", "2018-11-19 13:29:39.833750"], ["id", 4]]
+  [1m[35m (94.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 173ms (ActiveRecord: 127.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:29:40 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.4ms) [cache miss]
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (8.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (8.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (41.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (47.9ms) [cache miss]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered comments/_show.html.erb (7.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (12.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (13.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (69.6ms)
+  Rendered components/_navbar.html.erb (1.3ms) [cache miss]
+Completed 200 OK in 100ms (Views: 84.2ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/projects/5/tasks/3/edit" for 127.0.0.1 at 2018-11-19 14:29:42 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"project_id"=>"5", "id"=>"3"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 57ms (ActiveRecord: 3.4ms)
+
+
+
+ActionController::UnknownFormat - TasksController#edit is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/557b26eab4ab13a3/variables" for 127.0.0.1 at 2018-11-19 14:29:42 +0100
+Started GET "/projects/5/edit" for 127.0.0.1 at 2018-11-19 14:29:46 +0100
+Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (7.1ms) [cache miss]
+  Rendered projects/edit.html.erb within layouts/application (9.0ms)
+  Rendered components/_navbar.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 41ms (Views: 34.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/5/tasks/3/edit" for 127.0.0.1 at 2018-11-19 14:30:03 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"project_id"=>"5", "id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 58ms (ActiveRecord: 3.7ms)
+
+
+
+ActionController::UnknownFormat - TasksController#edit is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/9e8e7208eff1c22f/variables" for 127.0.0.1 at 2018-11-19 14:30:03 +0100
+Started GET "/tasks/3/comments/new" for 127.0.0.1 at 2018-11-19 14:30:06 +0100
+Processing by CommentsController#new as HTML
+  Parameters: {"task_id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 34ms (ActiveRecord: 1.9ms)
+
+
+
+ActionController::UnknownFormat - CommentsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/fc3eaae3e6c85983/variables" for 127.0.0.1 at 2018-11-19 14:30:06 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:31:14 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (475.2ms)
+Completed 500 Internal Server Error in 502ms (ActiveRecord: 3.7ms)
+
+
+
+NameError - undefined local variable or method `tasks' for #<#<Class:0x0000556314f2e618>:0x00007f50d067aac0>:
+  app/views/projects/index.html.erb:15:in `block in _app_views_projects_index_html_erb__3291890511722550870_69992535284300'
+  app/views/projects/index.html.erb:5:in `_app_views_projects_index_html_erb__3291890511722550870_69992535284300'
+
+Started POST "/__better_errors/c1872d64b01259d2/variables" for 127.0.0.1 at 2018-11-19 14:31:15 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:31:52 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.9ms) [cache miss]
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (79.6ms)
+  Rendered components/_navbar.html.erb (3.8ms) [cache miss]
+Completed 200 OK in 296ms (Views: 275.6ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/tasks/3/comments/new" for 127.0.0.1 at 2018-11-19 14:31:54 +0100
+Processing by CommentsController#new as HTML
+  Parameters: {"task_id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 76ms (ActiveRecord: 2.1ms)
+
+
+
+ActionController::UnknownFormat - CommentsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/43441711da5b5feb/variables" for 127.0.0.1 at 2018-11-19 14:31:54 +0100
+Started GET "/projects/5/tasks/3/edit" for 127.0.0.1 at 2018-11-19 14:32:02 +0100
+Processing by TasksController#edit as HTML
+  Parameters: {"project_id"=>"5", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 16ms (ActiveRecord: 1.2ms)
+
+
+
+ActionController::UnknownFormat - TasksController#edit is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []:
+
+Started POST "/__better_errors/5e3e65df2f3ab234/variables" for 127.0.0.1 at 2018-11-19 14:32:03 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:32:22 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (26.0ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 262ms (Views: 253.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/projects/5/edit" for 127.0.0.1 at 2018-11-19 14:32:24 +0100
+Processing by ProjectsController#edit as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (58.0ms) [cache miss]
+  Rendered projects/edit.html.erb within layouts/application (83.3ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 179ms (Views: 149.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:33:03 +0100
+  [1m[35m (10.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.2ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (567.8ms)
+  Rendered components/_navbar.html.erb (2.3ms) [cache miss]
+Completed 200 OK in 3388ms (Views: 3277.3ms | ActiveRecord: 35.2ms)
+
+
+Started GET "/projects/5/tasks/3/edit" for 127.0.0.1 at 2018-11-19 14:33:12 +0100
+Processing by TasksController#edit as JS
+  Parameters: {"project_id"=>"5", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/edit.js.erb
+  Rendered tasks/_form.html.erb (424.6ms) [cache miss]
+  Rendered tasks/edit.js.erb (435.0ms)
+Completed 200 OK in 443ms (Views: 437.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tasks/3/comments/new" for 127.0.0.1 at 2018-11-19 14:33:15 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (33.3ms) [cache miss]
+  Rendered comments/new.js.erb (45.4ms)
+Completed 200 OK in 69ms (Views: 55.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects/5/edit" for 127.0.0.1 at 2018-11-19 14:33:18 +0100
+Processing by ProjectsController#edit as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (5.6ms) [cache miss]
+  Rendered projects/edit.html.erb within layouts/application (13.7ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 78ms (Views: 55.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/projects/5/edit" for 127.0.0.1 at 2018-11-19 14:33:22 +0100
+Processing by ProjectsController#edit as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (11.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (3.9ms) [cache miss]
+  Rendered projects/edit.html.erb within layouts/application (7.6ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 60ms (Views: 32.1ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/projects/5/edit" for 127.0.0.1 at 2018-11-19 14:33:23 +0100
+Processing by ProjectsController#edit as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (5.7ms) [cache miss]
+  Rendered projects/edit.html.erb within layouts/application (11.3ms)
+  Rendered components/_navbar.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 67ms (Views: 46.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/tasks/3/comments/new" for 127.0.0.1 at 2018-11-19 14:33:25 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (23.3ms) [cache miss]
+  Rendered comments/new.js.erb (27.7ms)
+Completed 200 OK in 50ms (Views: 37.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:34:19 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (93.7ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 371ms (Views: 337.0ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/projects/5/edit" for 127.0.0.1 at 2018-11-19 14:34:23 +0100
+Processing by ProjectsController#edit as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (29.5ms) [cache miss]
+  Rendered projects/edit.html.erb within layouts/application (33.3ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 59ms (Views: 50.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2018-11-19 14:34:29 +0100
+Processing by ProjectsController#new as JS
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/new.js.erb
+  Rendered projects/_form.html.erb (14.2ms) [cache miss]
+  Rendered projects/new.js.erb (18.5ms)
+Completed 200 OK in 57ms (Views: 29.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects/5/tasks/2/edit" for 127.0.0.1 at 2018-11-19 14:34:32 +0100
+Processing by TasksController#edit as JS
+  Parameters: {"project_id"=>"5", "id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/edit.js.erb
+  Rendered tasks/_form.html.erb (49.9ms) [cache miss]
+  Rendered tasks/edit.js.erb (55.9ms)
+Completed 200 OK in 89ms (Views: 69.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/projects/5/tasks/3/edit" for 127.0.0.1 at 2018-11-19 14:34:35 +0100
+Processing by TasksController#edit as JS
+  Parameters: {"project_id"=>"5", "id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/edit.js.erb
+  Rendered tasks/_form.html.erb (12.5ms) [cache miss]
+  Rendered tasks/edit.js.erb (14.9ms)
+Completed 200 OK in 40ms (Views: 23.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/projects/5/edit" for 127.0.0.1 at 2018-11-19 14:34:39 +0100
+Processing by ProjectsController#edit as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering projects/edit.html.erb within layouts/application
+  Rendered projects/_form.html.erb (5.3ms) [cache miss]
+  Rendered projects/edit.html.erb within layouts/application (13.4ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 79ms (Views: 54.5ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/projects/5/tasks/2" for 127.0.0.1 at 2018-11-19 14:34:48 +0100
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FjZ7p9hYlsIt7Eap3+IaacDcoFxm3fxIFrsU4i9YFizUTGlvEUp/Z4ighPvalHAvKboyd9E1wFLDfA9FVDa8xA==", "task"=>{"description"=>"dzadaz", "priority"=>"1", "deadline"=>"2018-11-19"}, "button"=>"", "project_id"=>"5", "id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 35ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:34:48 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (3.5ms) [cache miss]
+  [1m[36mComment Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (100.1ms)
+  Rendered components/_navbar.html.erb (1.4ms) [cache miss]
+Completed 200 OK in 167ms (Views: 142.7ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/tasks/3/comments/new" for 127.0.0.1 at 2018-11-19 14:34:53 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (28.9ms) [cache miss]
+  Rendered comments/new.js.erb (33.2ms)
+Completed 200 OK in 62ms (Views: 45.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tasks/2/comments/new" for 127.0.0.1 at 2018-11-19 14:35:12 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (26.1ms) [cache miss]
+  Rendered comments/new.js.erb (32.4ms)
+Completed 200 OK in 58ms (Views: 42.0ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/tasks/3/comments" for 127.0.0.1 at 2018-11-19 14:35:18 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1n3LHZNbtI/ParakdecsVnaY04cXe6/ZmzF6LJJzpoXsZMG83vgLzrL2hGFunzh0MvdaB8l6DI4Z3siXkWRi1A==", "comment"=>{"description"=>"", "file_cache"=>""}, "button"=>"", "task_id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :file_cache
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 3.9ms)
+
+
+
+ActionView::MissingTemplate - Missing template comments/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/franklin/code/franklindch/tests/test-backend/app/views"
+  * "/home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/devise-4.5.0/app/views"
+:
+  app/controllers/comments_controller.rb:15:in `create'
+
+Started POST "/__better_errors/96a00968ae0fe647/variables" for 127.0.0.1 at 2018-11-19 14:35:19 +0100
+Started GET "/tasks/3/comments/new" for 127.0.0.1 at 2018-11-19 14:35:24 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (6.1ms) [cache miss]
+  Rendered comments/new.js.erb (7.3ms)
+Completed 200 OK in 19ms (Views: 11.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:35:28 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (20.0ms) [cache miss]
+  Rendered tasks/new.js.erb (24.8ms)
+Completed 200 OK in 61ms (Views: 34.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:38:41 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (121.4ms)
+  Rendered components/_navbar.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 9323ms (Views: 9284.3ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:38:55 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (29.7ms) [cache miss]
+  Rendered tasks/new.js.erb (30.7ms)
+Completed 200 OK in 39ms (Views: 33.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:40:51 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.7ms) [cache miss]
+  [1m[36mComment Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (111.6ms)
+Completed 500 Internal Server Error in 421ms (ActiveRecord: 20.8ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'flatpickr' with type 'application/javascript'
+Checked in these paths: 
+  /home/franklin/code/franklindch/tests/test-backend/app/assets/config
+  /home/franklin/code/franklindch/tests/test-backend/app/assets/images
+  /home/franklin/code/franklindch/tests/test-backend/app/assets/javascripts
+  /home/franklin/code/franklindch/tests/test-backend/app/assets/stylesheets
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/cloudinary-1.10.0/vendor/assets/html
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/cloudinary-1.10.0/vendor/assets/javascripts
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/actioncable-5.1.0/lib/assets/compiled
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/actionview-5.1.0/lib/assets/compiled
+  /home/franklin/code/franklindch/tests/test-backend/node_modules
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/popper_js-1.14.5/assets/javascripts
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0/assets/stylesheets
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0/assets/javascripts
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/font-awesome-sass-5.5.0.1/assets/stylesheets
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/font-awesome-sass-5.5.0.1/assets/fonts:
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__2409970632128987568_70059916626780'
+
+Started POST "/__better_errors/3b7e4c1249f54cf9/variables" for 127.0.0.1 at 2018-11-19 14:40:52 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:42:10 +0100
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.5ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (134.6ms)
+Completed 500 Internal Server Error in 336ms (ActiveRecord: 17.7ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'flatpickr' with type 'application/javascript'
+Checked in these paths: 
+  /home/franklin/code/franklindch/tests/test-backend/app/assets/config
+  /home/franklin/code/franklindch/tests/test-backend/app/assets/images
+  /home/franklin/code/franklindch/tests/test-backend/app/assets/javascripts
+  /home/franklin/code/franklindch/tests/test-backend/app/assets/stylesheets
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.3/vendor/assets/javascripts
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/cloudinary-1.10.0/vendor/assets/html
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/cloudinary-1.10.0/vendor/assets/javascripts
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/actioncable-5.1.0/lib/assets/compiled
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/actionview-5.1.0/lib/assets/compiled
+  /home/franklin/code/franklindch/tests/test-backend/node_modules
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/popper_js-1.14.5/assets/javascripts
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0/assets/stylesheets
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0/assets/javascripts
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/font-awesome-sass-5.5.0.1/assets/stylesheets
+  /home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/font-awesome-sass-5.5.0.1/assets/fonts:
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___4206208805001514555_47198587104560'
+
+Started POST "/__better_errors/c938e345a151c004/variables" for 127.0.0.1 at 2018-11-19 14:42:11 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:42:42 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.7ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (114.5ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 5647ms (Views: 5601.7ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:42:51 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (31.2ms) [cache miss]
+  Rendered tasks/new.js.erb (32.5ms)
+Completed 200 OK in 43ms (Views: 36.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:43:54 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (97.4ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 370ms (Views: 332.5ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:43:56 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (46.7ms) [cache miss]
+  Rendered tasks/new.js.erb (50.6ms)
+Completed 200 OK in 79ms (Views: 62.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:44:18 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (131.2ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 432ms (Views: 393.9ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:44:18 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (4.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (42.0ms)
+  Rendered components/_navbar.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 63ms (Views: 50.2ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:44:20 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (75.3ms) [cache miss]
+  Rendered tasks/new.js.erb (79.1ms)
+Completed 200 OK in 108ms (Views: 95.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:51:03 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.0ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (57.5ms)
+  Rendered components/_navbar.html.erb (3.6ms) [cache miss]
+Completed 200 OK in 360ms (Views: 321.7ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:51:06 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (36.9ms) [cache miss]
+  Rendered tasks/new.js.erb (39.5ms)
+Completed 200 OK in 80ms (Views: 43.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:53:47 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.8ms) [cache miss]
+  [1m[36mComment Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (399.8ms)
+  Rendered components/_navbar.html.erb (1.1ms) [cache miss]
+Completed 200 OK in 3400ms (Views: 3266.9ms | ActiveRecord: 39.1ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:53:55 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (755.7ms) [cache miss]
+  Rendered tasks/new.js.erb (758.6ms)
+Completed 200 OK in 785ms (Views: 767.8ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/projects/5/tasks" for 127.0.0.1 at 2018-11-19 14:54:11 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"if8rnAvfNJSUjNnEprw083SHtNL+S4qZn1LNxRf3xrv5o8c+z6St5WfHjV6s4x83VKkKHPDJtsL1fDXhY1J/GA==", "task"=>{"description"=>"", "priority"=>"", "deadline"=>""}, "button"=>"", "project_id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 1.4ms)
+
+
+
+ActionView::MissingTemplate - Missing template tasks/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/franklin/code/franklindch/tests/test-backend/app/views"
+  * "/home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/devise-4.5.0/app/views"
+:
+  app/controllers/tasks_controller.rb:14:in `create'
+
+Started POST "/__better_errors/7a7d04fe379a5707/variables" for 127.0.0.1 at 2018-11-19 14:54:11 +0100
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:54:21 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (11.4ms) [cache miss]
+  Rendered tasks/new.js.erb (14.3ms)
+Completed 200 OK in 35ms (Views: 22.1ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/projects/5/tasks" for 127.0.0.1 at 2018-11-19 14:54:27 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QinCMql0tq4FuMsCf2JQfI8DAH/TWK8J/V77KC+Kt+MydS6QbQ8v3/bzn5h1PXu4ry2+sd3ak1KXcAMMWy8OQA==", "task"=>{"description"=>"dz", "priority"=>"", "deadline"=>""}, "button"=>"", "project_id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (43.4ms)[0m  [1m[32mINSERT INTO "tasks" ("created_at", "updated_at", "project_id", "description") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2018-11-19 13:54:27.545443"], ["updated_at", "2018-11-19 13:54:27.545443"], ["project_id", 5], ["description", "dz"]]
+  [1m[35m (38.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 93ms (ActiveRecord: 82.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:54:27 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (2.0ms) [cache miss]
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (56.5ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 97ms (Views: 74.8ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:54:31 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (12.8ms) [cache miss]
+  Rendered tasks/new.js.erb (15.0ms)
+Completed 200 OK in 34ms (Views: 20.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:55:10 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.1ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (66.3ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 303ms (Views: 278.9ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:55:13 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (8.2ms) [cache miss]
+  Rendered tasks/new.js.erb (9.5ms)
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:55:32 +0100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (298.0ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 681ms (Views: 554.9ms | ActiveRecord: 28.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:55:33 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (43.8ms)
+  Rendered components/_navbar.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 68ms (Views: 56.5ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:55:35 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (445.7ms) [cache miss]
+  Rendered tasks/new.js.erb (447.3ms)
+Completed 200 OK in 456ms (Views: 450.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:56:17 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (30.9ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 51ms (Views: 41.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 14:56:18 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (12.9ms) [cache miss]
+  Rendered tasks/new.js.erb (15.2ms)
+Completed 200 OK in 34ms (Views: 20.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:56:27 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.7ms) [cache miss]
+  [1m[36mComment Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.8ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (85.0ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 128ms (Views: 102.7ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 14:58:18 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (15.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (2.4ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.7ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (1131.8ms)
+  Rendered components/_navbar.html.erb (2.5ms) [cache miss]
+Completed 200 OK in 6547ms (Views: 6048.3ms | ActiveRecord: 73.8ms)
+
+
+Started GET "/tasks/5/comments/new" for 127.0.0.1 at 2018-11-19 14:59:22 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"5"}
+  [1m[36mUser Load (334.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (5679.0ms) [cache miss]
+  Rendered comments/new.js.erb (5816.6ms)
+Completed 200 OK in 8149ms (Views: 6140.1ms | ActiveRecord: 335.7ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:00:03 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (913.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (362.5ms) [cache miss]
+  Rendered tasks/new.js.erb (390.1ms)
+Completed 200 OK in 2934ms (Views: 475.7ms | ActiveRecord: 914.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:08:11 +0100
+  [1m[35m (29.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (691.0ms)
+Completed 200 OK in 3171ms (Views: 3051.7ms | ActiveRecord: 83.9ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-11-19 15:08:17 +0100
+Started GET "/users/auth/facebook/callback?code=AQCCIzP0nLXhDifR-AOzJKZ-LGXZS7_gltGuS6SRblPw8fSnOTvCevNe1fVeGB23t2vvbYhSxDXEsVes-GG325L_jPirWv-4WHi6LPciKx1Hk7qBg18CSB7SHcsCSJp0h9kXocDOCypeNZW9GgrQvkDzZWZab4Hi6z4guh3hogfj1JYkvRWOlcFXPt5xRVjYyBd469dYdZwlFVeuGu_gK_AxQstmw7oH271rQ23ANIik0-OUPr1lVghpfunb2ZTnejiEl5gTZuMTha-1PpnTXzlhqafpBntoUPEVgDsCu81eKDnyNmoYCtXORZ_DsEu5N60&state=a6bf4666624ce3cfa7eb20e627535b9933a3d0f7b73ffdcd" for 127.0.0.1 at 2018-11-19 15:08:18 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCCIzP0nLXhDifR-AOzJKZ-LGXZS7_gltGuS6SRblPw8fSnOTvCevNe1fVeGB23t2vvbYhSxDXEsVes-GG325L_jPirWv-4WHi6LPciKx1Hk7qBg18CSB7SHcsCSJp0h9kXocDOCypeNZW9GgrQvkDzZWZab4Hi6z4guh3hogfj1JYkvRWOlcFXPt5xRVjYyBd469dYdZwlFVeuGu_gK_AxQstmw7oH271rQ23ANIik0-OUPr1lVghpfunb2ZTnejiEl5gTZuMTha-1PpnTXzlhqafpBntoUPEVgDsCu81eKDnyNmoYCtXORZ_DsEu5N60", "state"=>"a6bf4666624ce3cfa7eb20e627535b9933a3d0f7b73ffdcd"}
+  [1m[36mUser Load (48.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "facebook"], ["uid", "10156697465052744"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 187ms (ActiveRecord: 50.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:08:19 +0100
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (39.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (7.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.6ms) [cache miss]
+  [1m[36mComment Exists (22.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (563.8ms)
+  Rendered components/_navbar.html.erb (2.4ms) [cache miss]
+Completed 200 OK in 695ms (Views: 489.8ms | ActiveRecord: 112.5ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:08:23 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (41.3ms) [cache miss]
+  Rendered tasks/new.js.erb (54.0ms)
+Completed 200 OK in 99ms (Views: 65.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:09:39 +0100
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (32.9ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 48ms (Views: 43.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:09:47 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (28.8ms) [cache miss]
+  Rendered tasks/new.js.erb (35.0ms)
+Completed 200 OK in 59ms (Views: 46.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:09:53 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (21.5ms) [cache miss]
+  Rendered tasks/new.js.erb (25.8ms)
+Completed 200 OK in 47ms (Views: 34.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:10:22 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (10.2ms) [cache miss]
+  Rendered tasks/new.js.erb (12.0ms)
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:10:38 +0100
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.5ms) [cache miss]
+  [1m[36mComment Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.9ms) [cache miss]
+  [1m[36mComment Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (109.9ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 138ms (Views: 117.5ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:10:40 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (8.5ms) [cache miss]
+  Rendered tasks/new.js.erb (10.1ms)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:11:23 +0100
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (2.9ms) [cache miss]
+  [1m[36mComment Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (84.7ms)
+  Rendered components/_navbar.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 187ms (Views: 171.5ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:11:26 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (22.9ms) [cache miss]
+  Rendered tasks/new.js.erb (26.5ms)
+Completed 200 OK in 49ms (Views: 34.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:12:37 +0100
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (30.4ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 136ms (Views: 130.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:12:39 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (21.4ms) [cache miss]
+  Rendered tasks/new.js.erb (24.7ms)
+Completed 200 OK in 44ms (Views: 33.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:12:43 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (15.9ms) [cache miss]
+  Rendered tasks/new.js.erb (20.5ms)
+Completed 200 OK in 46ms (Views: 30.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:12:44 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (8.2ms) [cache miss]
+  Rendered tasks/new.js.erb (9.3ms)
+Completed 200 OK in 17ms (Views: 12.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:12:45 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (7.9ms) [cache miss]
+  Rendered tasks/new.js.erb (8.9ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:12:45 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (23.4ms) [cache miss]
+  Rendered tasks/new.js.erb (26.9ms)
+Completed 200 OK in 54ms (Views: 39.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:12:46 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (20.6ms) [cache miss]
+  Rendered tasks/new.js.erb (25.2ms)
+Completed 200 OK in 50ms (Views: 34.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:14:39 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.0ms) [cache miss]
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (110.6ms)
+  Rendered components/_navbar.html.erb (1.1ms) [cache miss]
+Completed 200 OK in 9323ms (Views: 9300.4ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:14:58 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (59.1ms) [cache miss]
+  Rendered tasks/new.js.erb (61.1ms)
+Completed 200 OK in 76ms (Views: 66.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:15:02 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (31.7ms) [cache miss]
+  Rendered tasks/new.js.erb (36.5ms)
+Completed 200 OK in 61ms (Views: 47.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:16:10 +0100
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (3.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (0.8ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (40.8ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 142ms (Views: 132.7ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/projects/4/tasks/new" for 127.0.0.1 at 2018-11-19 15:16:12 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (8.8ms) [cache miss]
+  Rendered tasks/new.js.erb (10.2ms)
+Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:17:56 +0100
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.9ms) [cache miss]
+  [1m[36mComment Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (4.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (100.9ms)
+  Rendered components/_navbar.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 224ms (Views: 205.2ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:17:58 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (16.0ms) [cache miss]
+  Rendered tasks/new.js.erb (21.0ms)
+Completed 200 OK in 51ms (Views: 35.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-19 15:18:21 +0100
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.0ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (33.9ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 115ms (Views: 108.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/projects/5/tasks/new" for 127.0.0.1 at 2018-11-19 15:18:22 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (23.9ms) [cache miss]
+  Rendered tasks/new.js.erb (28.9ms)
+Completed 200 OK in 57ms (Views: 41.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/tasks/5/completed" for 127.0.0.1 at 2018-11-19 15:20:09 +0100
+Processing by TasksController#completed as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Load (3.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (18.3ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", 1], ["updated_at", "2018-11-19 14:20:09.184782"], ["id", 5]]
+  [1m[35m (33.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 95ms (ActiveRecord: 57.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-19 15:20:09 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTask Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_completed.html.erb (1.0ms) [cache miss]
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 3], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 2]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 4], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 4]]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."task_id" = $1 LIMIT $2[0m  [["task_id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 4]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (60.1ms)
+  Rendered components/_navbar.html.erb (1.3ms) [cache miss]
+Completed 200 OK in 159ms (Views: 139.4ms | ActiveRecord: 10.1ms)
+
+
