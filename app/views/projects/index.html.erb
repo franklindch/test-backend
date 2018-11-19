@@ -17,6 +17,7 @@
       <% task.comments.each do |comment| %>
         <%= comment.description %>
         <%= comment.user %>
+        <%= link_to "Download File", comment.file_url %>
         <%= link_to 'Delete', task_comment_path(task, comment), method: :delete  %>
       <% end %>
 
