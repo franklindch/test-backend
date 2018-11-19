@@ -1,15 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">Trello Clone</a>
-    <ul class="navbar-nav ml-5 mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <%= link_to 'Create a new project', new_project_path, class: 'nav-link', remote: true  %>
-      </li>
-    </ul>
-    <p>Connecté en tant que <%= current_user.first_name %> <%= current_user.last_name %></p>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+  <h2 class="ml-3 mt-3">Trello Clone</h2>
+  <ul class="navbar-nav ml-5 mr-auto mt-2 mt-lg-0">
+    <li class="nav-item">
+      <div class="project_form mt-3">
+        <%= link_to 'Create a new project', new_project_path, class: 'navbar-link', remote: true  %>
+      </div>
+    </li>
+  </ul>
+  <div class="d-flex justify-content-between mt-3">
+    Logged as <%= current_user.first_name %> <%= current_user.last_name %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'ml-5 mr-3 navbar-link' %>
   </div>
 </nav>

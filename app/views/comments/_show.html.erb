@@ -1,16 +1,13 @@
-<% if task.comments.empty? %>
-  <h5 class="mt-3">No comment yet</h5>
-<% else %>
-  <h5 class="mt-3">Comments</h5>
-  <% task.comments.each do |comment| %>
-    <%= comment.description %>
-    <p class="card-text"><small class="text-muted">By <%= comment.user.first_name %></small></p>
-    <%= link_to "File", comment.file_url %>
-    <%= link_to 'Delete', task_comment_path(task, comment), method: :delete  %>
-
-    <div class="comment-form"></div>
-
-
-  <% end %>
+<% comments.each do |comment| %>
+  <div class="card mt-2">
+    <div class="card-body">
+      <p class="mt-3"><%= comment.description %></p>
+      <!-- <p class="card-text"><small class="text-muted">By <%= comment.user.first_name %></small></p> -->
+      <div class="d-flex justify-content-between">
+        <%= link_to "Upload file", comment.file_url, class: 'comment-links' %>
+        <%= link_to 'Delete', task_comment_path(task, comment), method: :delete, class: 'comment-links'%>
+      </div>
+      <div class="comment-form"></div>
+    </div>
+  </div>
 <% end %>
-<%= link_to 'Add comment', new_task_comment_path(task), remote: true %>

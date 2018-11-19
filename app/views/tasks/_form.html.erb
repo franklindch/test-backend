@@ -1,8 +1,21 @@
-<%= simple_form_for [@project, @task] do |f| %>
-  <%= f.input :description, label: 'Description' %>
-  <%= f.input :priority, label: 'Priorité' %>
-  <%= f.input :deadline, label: 'Deadline' %>
-  <div class="btn btn-primary">
-    <%= f.button :button, "Valider et terminer" %>
+<div class="row margin-top-navbar">
+  <div class="col-md-12 mx-auto">
+    <div class="container-fluid">
+      <div class="row mt-4 ml-2">
+        <%= simple_form_for [@project, @task] do |f| %>
+          <%= f.input :description, label: false, placeholder: 'Task Description' %>
+          <div class="d-flex justify-content-around">
+            <div>
+              <%= f.input :priority, label: false, placeholder: 'Priority' %>
+              <%= f.input :deadline, as: :string, label: false, placeholder: 'Deadline',  input_html: {class: "deadline-datepicker"} %>
+            </div>
+            <%= f.submit "Valider", class: 'btn btn-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>
+
+
+

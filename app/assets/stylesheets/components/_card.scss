@@ -1,0 +1,39 @@
+.card-task {
+  color: black;
+  background-color: white;
+}
+
+
+.card-project {
+  color: white;
+  background-color: $green;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.project-links {
+  color: white;
+  &:hover {
+    color: $blue;
+  }
+}
+
+.task-links {
+  color: $blue;
+  &:hover {
+    color: $light-blue;
+  }
+}
+
+.comment-links {
+  color: $light-blue;
+  &:hover {
+    color: $blue;
+  }
+}
+
+h2 {
+  color: $green;
+}
