@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181118153658) do
+ActiveRecord::Schema.define(version: 20181119074935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.string "description"
+    t.text "description"
     t.string "file"
     t.bigint "task_id"
     t.bigint "user_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20181118153658) do
   end
 
   create_table "tasks", force: :cascade do |t|
+    t.text "description"
     t.integer "status"
     t.integer "priority"
     t.date "deadline"
