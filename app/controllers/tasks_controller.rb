@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :retrieve_task, only: [:edit, :update, :destroy]
+  before_action :retrieve_task, only: [:edit, :update, :destroy, :completed]
   before_action :retrieve_project, only: [:new, :create, :edit, :update]
 
   def new
@@ -25,6 +25,11 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
+    redirect_to projects_path
+  end
+
+  def completed
+    @task.completed!
     redirect_to projects_path
   end
 
