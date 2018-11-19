@@ -3,13 +3,17 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">Trello Clone</a>
+    <h3 class="navbar-brand"">Trello Clone</h3>
     <ul class="navbar-nav ml-5 mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <%= link_to 'Create a new project', new_project_path, class: 'nav-link', remote: true  %>
+        <div class="project-form">
+          <%= link_to 'Create a new project', new_project_path, class: 'nav-link', remote: true  %>
+        </div>
       </li>
     </ul>
-    <p>Connecté en tant que <%= current_user.first_name %> <%= current_user.last_name %></p>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <div class="d-flex justify-content-between">
+      Connecté en tant que <%= current_user.first_name %> <%= current_user.last_name %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'ml-5' %>
+    </div>
   </div>
 </nav>

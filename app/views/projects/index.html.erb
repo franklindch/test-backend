@@ -1,63 +1,16 @@
 <div class="container-fluid">
   <div class="row mt-4">
-    <div class="col-sm-3">
-
-    <% @projects.each do |project| %>
+    <% @projects.each_with_index do |project, index| %>
+    <div class="col-sm-4 mt-3">
       <div class="card card-project">
-        <div class="card-body">
-          <div class="d-flex justify-content-between">
-            <h3 class="card-title"><%= capitalized_word(project.name) %></h3>
-            <div class="d-flex justify-content-between">
-              <%= link_to 'Delete', project_path(project), method: :delete, class: 'card-text mr-2 project-links' %>
-              <%= link_to 'Edit', edit_project_path(project), remote: true, class: 'card-text project-links' %>
-            </div>
-          </div>
-
-          <% if project.tasks.empty? %>
-            <h4 class="mt-3">No tasks yet</h4>
-          <% else %>
-            <% project.tasks.each do |task| %>
-              <div class="card card-task">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between">
-                    <p class="card-text"><small class="text-muted">Task due <%= task.deadline %></small></p>
-                    <%= render 'tasks/completed', task: task %>
-                  </div>
-                  <h4 class="card-title"><%= task.priority %></h4>
-                  <p class="mb-3"><%= capitalized_word(task.description) %></p>
-
-                  <div class="task-form"></div>
-
-                  <%= render 'comments/show', task: task, comments: task.comments %>
-                  <div class="d-flex justify-content-between mt-3">
-                    <%= link_to 'Add comment', new_task_comment_path(task), remote: true, class: 'task-links' %>
-                    <div class="d-flex justify-content-between">
-                      <%= link_to 'Delete', project_task_path(project, task), method: :delete, class: 'task-links mr-2'  %>
-                      <%= link_to 'Edit task', edit_project_task_path(project, task), remote: true, class: 'task-links' %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-
-
-          <%#= render 'components/card_task', project: project, tasks: project.tasks %>
-
-
-          <%= link_to 'Add task', new_project_task_path(project), remote: true, class: 'add_task_button' %>
-
-          <hr>
-        </div>
+        <%= render 'components/card_project', project: project, index: index %>
+        <%= link_to 'Add task', new_project_task_path(project), remote: true, class: 'task_button card-project ml-4 mb-2' %>
       </div>
 
-      <%#= render 'components/card_project', project: project %>
-    <% end %>
-
     </div>
+    <% end %>
   </div>
 </div>
 
-<div class="project-form"></div>
 
-<%= link_to 'Add project', new_project_path, remote: true  %>
+

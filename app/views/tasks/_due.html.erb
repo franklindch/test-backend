@@ -1,0 +1,6 @@
+<% if task.due? %>
+  <p class="card-text"><small class="text-muted">Delay! <%= task.deadline %></small></p>
+<% else %>
+  <p class="card-text"><small class="text-muted">Task due <%= task.deadline %></small></p>
+<% end %>
+
