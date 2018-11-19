@@ -1,0 +1,42 @@
+<div class="navbar">
+  <!-- Logo -->
+  <a href="/" class="navbar-brand">
+    <img src="images/logo.png" alt="logo">
+  </a>
+
+  <!-- Right Navigation -->
+  <div class="navbar-right hidden-xs hidden-sm">
+
+    <a href="" class="navbar-item navbar-link">Host</a>
+    <a href="" class="navbar-item navbar-link">Trips</a>
+    <a href="" class="navbar-item navbar-link">Messages</a>
+
+    <!-- Profile picture with dropdown list -->
+    <div class="navbar-item">
+      <div class="dropdown">
+        <img src="https://kitt.l.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <% if user_signed_in? %>
+            <li><%= link_to "Profile", edit_user_registration_path %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Login", new_user_session_path  %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+        <li><a href="#">Host</a></li>
+        <li><a href="#">Trips</a></li>
+        <li><a href="#">Messagese</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
