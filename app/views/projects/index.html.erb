@@ -3,55 +3,44 @@
     <div class="col-sm-3">
 
     <% @projects.each do |project| %>
-      <div class="card">
+      <div class="card card-project">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-            <h6 class="card-title"><%= project.name %></h6>
+            <h3 class="card-title"><%= capitalized_word(project.name) %></h3>
             <div class="d-flex justify-content-between">
-              <%= link_to 'Delete', project_path(project), method: :delete, class: 'card-text mr-2' %>
-              <%= link_to 'Edit', edit_project_path(project), remote: true, class: 'card-text' %>
+              <%= link_to 'Delete', project_path(project), method: :delete, class: 'card-text mr-2 project-links' %>
+              <%= link_to 'Edit', edit_project_path(project), remote: true, class: 'card-text project-links' %>
             </div>
           </div>
-          <% if project.tasks.empty? %>
-            <h5 class="mt-3">No tasks yet</h5>
 
+          <% if project.tasks.empty? %>
+            <h4 class="mt-3">No tasks yet</h4>
           <% else %>
             <% project.tasks.each do |task| %>
-              <div class="card">
+              <div class="card card-task">
                 <div class="card-body">
                   <div class="d-flex justify-content-between">
-                    <p class="card-text"><%= task.description %></p>
+                    <p class="card-text"><small class="text-muted">Task due <%= task.deadline %></small></p>
                     <%= render 'tasks/completed', task: task %>
                   </div>
-                  <%= task.priority %>
-                  <%= task.deadline %>
-                  <%= link_to 'Delete', project_task_path(project, task), method: :delete  %>
-                  <%= link_to 'Edit', edit_project_task_path(project, task), remote: true %>
+                  <h4 class="card-title"><%= task.priority %></h4>
+                  <p class="mb-3"><%= capitalized_word(task.description) %></p>
 
-                  <% if task.comments.empty? %>
-                    <h5 class="mt-3">No comment yet</h5>
-                  <% else %>
-                    <h5 class="mt-3">Comments</h5>
-                    <% task.comments.each do |comment| %>
-                      <%= comment.description %>
-                      <p class="card-text"><small class="text-muted">By <%= comment.user.first_name %></small></p>
-                      <%= link_to "File", comment.file_url %>
-                      <%= link_to 'Delete', task_comment_path(task, comment), method: :delete  %>
+                  <div class="task-form"></div>
 
-                      <div class="comment-form"></div>
-
-
-                    <% end %>
-                  <% end %>
-                  <%= link_to 'Add comment', new_task_comment_path(task), remote: true %>
-
-                  <%#= render 'comments/show', task: task, comments: task.comments %>
+                  <%= render 'comments/show', task: task, comments: task.comments %>
+                  <div class="d-flex justify-content-between mt-3">
+                    <%= link_to 'Add comment', new_task_comment_path(task), remote: true, class: 'task-links' %>
+                    <div class="d-flex justify-content-between">
+                      <%= link_to 'Delete', project_task_path(project, task), method: :delete, class: 'task-links mr-2'  %>
+                      <%= link_to 'Edit task', edit_project_task_path(project, task), remote: true, class: 'task-links' %>
+                    </div>
+                  </div>
                 </div>
               </div>
             <% end %>
           <% end %>
 
-          <div class="task-form"></div>
 
           <%#= render 'components/card_task', project: project, tasks: project.tasks %>
 
