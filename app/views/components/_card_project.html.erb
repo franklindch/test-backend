@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <h6 class="card-title"><%= project.name %></h6>
+      <div class="d-flex justify-content-between">
+        <%= link_to 'Delete', project_path(project), method: :delete, class: 'card-text mr-2' %>
+        <%= link_to 'Edit', edit_project_path(project), remote: true, class: 'card-text' %>
+      </div>
+    </div>
+
+    <%= render 'components/card_task', project: project, tasks: project.tasks %>
+
+
+    <%= link_to 'Add task', new_project_task_path(project), remote: true %>
+
+    <hr>
+  </div>
+</div>

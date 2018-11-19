@@ -7,19 +7,13 @@
     <title>TODO</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "Edit profile", edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path  %> |
-      <%= link_to "Login", new_user_session_path  %>
-    <% end %>
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <%= render 'components/navbar' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
   </body>
