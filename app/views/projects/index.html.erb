@@ -1,0 +1,9 @@
+<% @projects.each do |project| %>
+  <h3><%= project.name %></h3>
+  <%= link_to 'Delete', project_path(project), method: :delete  %>
+  <%= link_to 'Edit', edit_project_path(project)  %>
+<% end %>
+
+<div class="new-project-form"></div>
+
+<%= link_to 'Add project', new_project_path, remote: true  %>
