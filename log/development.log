@@ -27896,3 +27896,72 @@ Processing by ProjectsController#index as HTML
 Completed 200 OK in 136ms (Views: 116.0ms | ActiveRecord: 7.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-20 07:55:31 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 12]]
+  Rendered components/_card_comment.html.erb (10.9ms) [cache miss]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 18]]
+  Rendered components/_card_comment.html.erb (0.9ms) [cache miss]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (1.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (51.8ms) [cache miss]
+  Rendered components/_card_project.html.erb (61.8ms) [cache miss]
+  [1m[36mTask Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 11], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 11]]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 13]]
+  Rendered components/_card_comment.html.erb (17.1ms) [cache miss]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 11]]
+  Rendered components/_card_comment.html.erb (1.0ms) [cache miss]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 14]]
+  Rendered components/_card_comment.html.erb (0.9ms) [cache miss]
+  Rendered components/_card_task.html.erb (28.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (28.7ms) [cache miss]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 13], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 13]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 17]]
+  Rendered components/_card_comment.html.erb (1.5ms) [cache miss]
+  Rendered components/_card_task.html.erb (7.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (8.1ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (110.2ms)
+  Rendered components/_navbar.html.erb (1.4ms) [cache miss]
+Completed 200 OK in 590ms (Views: 565.9ms | ActiveRecord: 12.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-20 07:55:35 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iYicLN+GGSWhHR0YNivIEZqKOJqM9vcQr2qe6lDbAqQUyYMhUwOvlXjbqdBgPMlM6LDPHpZ7HSgYVkD4fjmr8g=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 171ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-20 07:55:36 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (296.4ms)
+Completed 200 OK in 314ms (Views: 312.7ms | ActiveRecord: 0.0ms)
+
+
