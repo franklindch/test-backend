@@ -4,8 +4,12 @@
       <h3 class="card-title"><%= index + 1 %> - <%= capitalized_word(project.name) %></h3>
     </div>
     <div class="d-flex justify-content-between">
-      <%= link_to 'Delete', project_path(project), method: :delete, class: 'card-text mr-2 project-links' %>
-      <%= link_to 'Edit project', edit_project_path(project), remote: true, class: 'card-text project-links' %>
+      <% if policy(project).destroy? %>
+        <%= link_to 'Delete', project_path(project), method: :delete, class: 'card-text mr-2 project-links' %>
+      <% end %>
+      <% if policy(project).edit? %>
+        <%= link_to 'Edit project', edit_project_path(project), remote: true, class: 'card-text project-links' %>
+      <% end %>
     </div>
   </div>
   <%= render 'components/card_task', project: project, tasks: project.tasks %>
