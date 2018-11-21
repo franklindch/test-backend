@@ -5,11 +5,13 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     respond_to :html, :js
+    authorize @project
   end
 
   def create
     @project = Project.new(project_params)
     @project.user = current_user
+    authorize @project
     @project.save ? (redirect_to projects_path) : (render :new)
   end
 
@@ -28,7 +30,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = policy_scope(Project)
   end
 
   private
