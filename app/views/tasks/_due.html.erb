@@ -1,6 +1,10 @@
-<% if task.due? %>
-  <p class="card-text"><small class="text-muted">Delay! <%= task.deadline %></small></p>
+<% if task.due? && task.completed? %>
+  <p class="card-text"><small class="text-muted" style="color:green !important;">Task overdue <%= task.deadline %> but completed</small></p>
+<% elsif task.due? && task.pending? %>
+  <p class="card-text" ><small class="text-muted" style="color:red !important;">Task overdue <%= task.deadline %> and not completed</small></p>
+<% elsif task.completed? %>
+  <p class="card-text" ><small class="text-muted" style="color:green !important;">Task not overdue <%= task.deadline %> but completed</small></p>
 <% else %>
-  <p class="card-text"><small class="text-muted">Task due <%= task.deadline %></small></p>
+  <p class="card-text" ><small class="text-muted" style="color:orange !important;">Task not overdue <%= task.deadline %> and not completed</small></p>
 <% end %>
 

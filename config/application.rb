@@ -22,6 +22,7 @@ module TestBackend
       generate.assets false
     end
 
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
