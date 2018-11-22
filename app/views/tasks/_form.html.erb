@@ -6,7 +6,7 @@
           <%= f.input :description, label: false, placeholder: 'Task Description' %>
           <div class="d-flex justify-content-around">
             <div>
-              <%= f.input :priority, label: false, placeholder: 'Priority' %>
+              <%= f.input :priority, label: false, placeholder: 'Priority', collection: Task.priorities.keys.map { |w| [w.humanize, w] } %>
               <%= f.input :deadline, as: :string, label: false, placeholder: 'Deadline',  input_html: {class: "deadline-datepicker"} %>
             </div>
             <%= f.submit "Valider", class: 'btn btn-success' %>

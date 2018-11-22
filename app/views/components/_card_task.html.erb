@@ -1,7 +1,7 @@
 <% if project.tasks.empty? %>
   <div class="card card-task mt-3">
     <div class="card-body">
-      <h4 class="mt-3">No tasks yet</h4>
+      <h6 class="mt-3">No tasks yet</h6>
     </div>
   </div>
 <% else %>
@@ -13,7 +13,7 @@
             <%= render 'tasks/due', task: task %>
             <%= render 'tasks/completed', task: task %>
           </div>
-          <h4 class="card-title"><%= task.priority %></h4>
+          <h4 class="card-title"><%= task&.priority&.humanize %></h4>
           <p class="mb-3"><%= capitalized_word(task.description) %></p>
         </div>
         <%= render 'components/card_comment', task: task, comments: task.comments %>

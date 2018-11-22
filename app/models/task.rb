@@ -3,10 +3,11 @@ class Task < ApplicationRecord
   belongs_to :project
 
   enum status: [:pending, :completed]
+  enum priority: [:Priority_1, :Priority_2, :Priority_3]
 
-  validates :description, :deadline,presence: true
+  validates :description, :deadline, presence: true
 
   def due?
-    deadline >= Date.today
+    deadline <= Date.today
   end
 end

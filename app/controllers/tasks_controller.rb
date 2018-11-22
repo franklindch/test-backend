@@ -11,7 +11,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.project = @project
-    @task.save ? (redirect_to projects_path) : (render :new)
+    @task.save ? (redirect_to projects_path) : (render 'projects/index')
   end
 
   def edit
