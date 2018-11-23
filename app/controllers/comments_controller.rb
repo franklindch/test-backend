@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(
-      :description, :file, :task_id
+      :description, :task_id, :file, :file_cache
     )
   end
 end
