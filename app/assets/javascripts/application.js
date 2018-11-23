@@ -6,3 +6,6 @@
 $(".task_button").on("ajax:success",function(){
   flatpickr('.deadline-datepicker');
 });
+
+
+setTimeout(function(){ $('.alert').slideUp(500); }, 4000);

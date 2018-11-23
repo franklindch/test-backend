@@ -12,7 +12,8 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user = current_user
     authorize @project
-    @project.save ? (redirect_to projects_path) : (redirect_to root_path, project: @project.errors)
+    flash[:alert] = 'Please, fill the project name' unless @project.save
+    redirect_to projects_path
   end
 
   def edit
@@ -30,7 +31,6 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    # raise
     @projects = policy_scope(Project)
   end
 
