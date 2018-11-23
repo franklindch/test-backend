@@ -38335,3 +38335,53 @@ Processing by ProjectsController#index as HTML
 Completed 200 OK in 96ms (Views: 77.1ms | ActiveRecord: 7.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-23 08:50:28 +0100
+  [1m[35m (25.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms) [cache miss]
+  Rendered devise/sessions/new.html.erb within layouts/application (331.5ms)
+Completed 200 OK in 11762ms (Views: 11652.3ms | ActiveRecord: 73.3ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2018-11-23 08:50:44 +0100
+Started GET "/users/auth/facebook/callback?code=AQCzUVuYbE1erW0LKSZJHVJjKRiGuk5Exn1fgH7V4aITMEyxj7Fh7_VFeBRwSaSVW_ASBUcUvQ527SX4dXl6dtntq366ASUpoml9MLv6yDM_BIuuyyBWsneNh_GJMsT-pYSjdTWenyZWPEhDnTi-q603p9rdZI4Gst36MRhqkdLR6gacOYGDbuE50dViZm1aQ6_oH2gvbcYTqR5G_kxxpLFCsTIW6CgR2bgfWWZpBm8vm0dPb6RGJCXbl2aYs1o85xtF3rvsNdt0hGrwrCcDenBNoP1JIjESKu_vkEmGqGafQNy_oAI6jUiubAt2i0kUtdw&state=7f25198ec91919419a0b6ffee4e04ba169643d08eda64ab7" for 127.0.0.1 at 2018-11-23 08:50:45 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCzUVuYbE1erW0LKSZJHVJjKRiGuk5Exn1fgH7V4aITMEyxj7Fh7_VFeBRwSaSVW_ASBUcUvQ527SX4dXl6dtntq366ASUpoml9MLv6yDM_BIuuyyBWsneNh_GJMsT-pYSjdTWenyZWPEhDnTi-q603p9rdZI4Gst36MRhqkdLR6gacOYGDbuE50dViZm1aQ6_oH2gvbcYTqR5G_kxxpLFCsTIW6CgR2bgfWWZpBm8vm0dPb6RGJCXbl2aYs1o85xtF3rvsNdt0hGrwrCcDenBNoP1JIjESKu_vkEmGqGafQNy_oAI6jUiubAt2i0kUtdw", "state"=>"7f25198ec91919419a0b6ffee4e04ba169643d08eda64ab7"}
+  [1m[36mUser Load (52.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 LIMIT $3[0m  [["provider", "facebook"], ["uid", "10156697465052744"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 141ms (ActiveRecord: 53.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-23 08:50:46 +0100
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (36.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (9.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.2ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.4ms) [cache miss]
+  [1m[36mComment Load (23.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (125.3ms)
+  Rendered components/_card_task.html.erb (298.1ms)
+  Rendered components/_card_project.html.erb (406.2ms)
+  Rendered projects/index.html.erb within layouts/application (497.4ms)
+Completed 500 Internal Server Error in 587ms (ActiveRecord: 110.8ms)
+
+
+
+NoMethodError - undefined method `file_url' for #<Comment:0x00007fd92071b870>
+Did you mean?  file?:
+  app/views/components/_card_comment.html.erb:6:in `block in _app_views_components__card_comment_html_erb___2352493288479011847_70285264117500'
+  app/views/components/_card_comment.html.erb:1:in `_app_views_components__card_comment_html_erb___2352493288479011847_70285264117500'
+  app/views/components/_card_task.html.erb:19:in `block in _app_views_components__card_task_html_erb__2787550340789271077_70285263153360'
+  app/views/components/_card_task.html.erb:8:in `_app_views_components__card_task_html_erb__2787550340789271077_70285263153360'
+  app/views/components/_card_project.html.erb:15:in `_app_views_components__card_project_html_erb___2375407277611580376_70285262561040'
+  app/views/projects/index.html.erb:6:in `block in _app_views_projects_index_html_erb__3391721826322698481_70285262237780'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb__3391721826322698481_70285262237780'
+
+Started POST "/__better_errors/f83636764ba58790/variables" for 127.0.0.1 at 2018-11-23 08:50:47 +0100
