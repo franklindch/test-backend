@@ -11,7 +11,8 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.project = @project
-    @task.save ? (redirect_to projects_path) : (render 'projects/index')
+    flash[:alert] = 'Please, fill the description and deadline task fields' unless @task.save
+    redirect_to projects_path
   end
 
   def edit

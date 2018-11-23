@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.task = @task
     @comment.user = current_user
-    @comment.save ? (redirect_to projects_path) : (render :new)
+    flash[:alert] = 'Please, fill correctly the description comment field' unless @comment.save
+    redirect_to projects_path
   end
 
   def destroy
