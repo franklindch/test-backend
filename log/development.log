@@ -38385,3 +38385,1972 @@ Did you mean?  file?:
   app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb__3391721826322698481_70285262237780'
 
 Started POST "/__better_errors/f83636764ba58790/variables" for 127.0.0.1 at 2018-11-23 08:50:47 +0100
+Started GET "/" for 127.0.0.1 at 2018-11-23 08:55:09 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.9ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (16.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (59.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (82.4ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (2.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (98.1ms)
+Started GET "/" for 127.0.0.1 at 2018-11-23 08:55:13 +0100
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (4.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (11.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (17.0ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (5.4ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (26.7ms)
+  Rendered components/_navbar.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 6651ms (Views: 6629.3ms | ActiveRecord: 11.7ms)
+
+
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 3836ms (Views: 3831.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 08:56:19 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (164.5ms) [cache miss]
+  Rendered comments/new.js.erb (169.0ms)
+Completed 200 OK in 195ms (Views: 179.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 08:56:25 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SV9293r42v9x4ksVXeTzNF3y1wcHjZe/mGEAW7mw67i0CeXEAgJiLkyPwGZWQCoTcxhem6zKZwLekahtG7/qkg==", "comment"=>{"description"=>"dzdq", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007f7af8a25c18 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-7553-xns0df.odt>, @original_filename="Notes test - Skello.odt", @content_type="application/vnd.oasis.opendocument.text", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"Notes test - Skello.odt\"\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n">, "file_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Unpermitted parameter: :file_cache
+  [1m[35m (12.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (71.4ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "dzdq"], ["file", "zsctbictmziyusjzu6yt.odt"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 07:56:26.064376"], ["updated_at", "2018-11-23 07:56:26.064376"]]
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 192ms (ActiveRecord: 101.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 08:56:26 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (2.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (3.0ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.9ms) [cache miss]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (16.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (51.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (74.4ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (4.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (19.4ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (109.6ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 152ms (Views: 129.9ms | ActiveRecord: 10.4ms)
+
+
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" ORDER BY "tasks"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 08:57:35 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.0ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (28.1ms) [cache miss]
+  Rendered components/_card_task.html.erb (61.8ms) [cache miss]
+  Rendered components/_card_project.html.erb (82.7ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (2.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (95.7ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 378ms (Views: 334.5ms | ActiveRecord: 14.5ms)
+
+
+Started DELETE "/tasks/15/comments/28" for 127.0.0.1 at 2018-11-23 08:57:39 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xhU+wxG4f8mgObzNnSpmjKmaev2KZG/VRxkVz/wDgbYnvng/ZPzZhmY+eUitTdYZCqPHMaF9DsfVpVx/zQPxlg==", "task_id"=>"15", "id"=>"28"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 28]]
+  [1m[35m (62.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1394ms (ActiveRecord: 63.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 08:57:40 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.7ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (4.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (18.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (26.7ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (3.7ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (36.1ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 64ms (Views: 50.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 08:57:42 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (38.4ms) [cache miss]
+  Rendered comments/new.js.erb (40.1ms)
+Completed 200 OK in 59ms (Views: 45.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 08:57:47 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DLTtFeuTqhb5phWkr5w4fvon4nvww9ba15P51gOqYvLx4n4mk2kSx8TLntekOOFZ1M1r51uEJmeRY1HgoaVj2A==", "comment"=>{"description"=>"zdzd", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007fb308a48bd0 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-7889-1o52th9.odt>, @original_filename="Notes test - Skello.odt", @content_type="application/vnd.oasis.opendocument.text", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"Notes test - Skello.odt\"\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n">, "file_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "zdzd"], ["file", "h8x9jw4cimmyrgpitln5.odt"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 07:57:47.244029"], ["updated_at", "2018-11-23 07:57:47.244029"]]
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 53ms (ActiveRecord: 36.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 08:57:47 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (2.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (8.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (13.7ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (5.0ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (21.4ms)
+  Rendered components/_navbar.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 2.3ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8688009949366714365);[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (29.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8688009949366714365)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:01:44 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (34.1ms)
+  Rendered components/_card_task.html.erb (67.9ms)
+  Rendered components/_card_project.html.erb (85.2ms)
+  Rendered projects/index.html.erb within layouts/application (97.2ms)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 20.5ms)
+
+
+
+NoMethodError - undefined method `to_model' for #<FileUploader:0x00005601ace04288>
+Did you mean?  to_xml:
+  app/views/components/_card_comment.html.erb:7:in `block in _app_views_components__card_comment_html_erb__2415101052063660759_47282577574420'
+  app/views/components/_card_comment.html.erb:1:in `_app_views_components__card_comment_html_erb__2415101052063660759_47282577574420'
+  app/views/components/_card_task.html.erb:19:in `block in _app_views_components__card_task_html_erb__671714541341867455_47282586643300'
+  app/views/components/_card_task.html.erb:8:in `_app_views_components__card_task_html_erb__671714541341867455_47282586643300'
+  app/views/components/_card_project.html.erb:15:in `_app_views_components__card_project_html_erb___2283706150979466731_47282593641900'
+  app/views/projects/index.html.erb:6:in `block in _app_views_projects_index_html_erb___1717012228897621911_47282594149400'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb___1717012228897621911_47282594149400'
+
+Started POST "/__better_errors/ec2401efe060a09c/variables" for 127.0.0.1 at 2018-11-23 09:01:44 +0100
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:02:59 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.8ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (36.9ms)
+  Rendered components/_card_task.html.erb (70.2ms)
+  Rendered components/_card_project.html.erb (86.3ms)
+  Rendered projects/index.html.erb within layouts/application (96.8ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 15.4ms)
+
+
+
+NoMethodError - undefined method `to_model' for #<FileUploader:0x000055a15e8c8c00>
+Did you mean?  to_xml:
+  app/views/components/_card_comment.html.erb:8:in `block in _app_views_components__card_comment_html_erb__2773209000791090107_47075791285100'
+  app/views/components/_card_comment.html.erb:1:in `_app_views_components__card_comment_html_erb__2773209000791090107_47075791285100'
+  app/views/components/_card_task.html.erb:19:in `block in _app_views_components__card_task_html_erb___3890538037650141536_70227483869280'
+  app/views/components/_card_task.html.erb:8:in `_app_views_components__card_task_html_erb___3890538037650141536_70227483869280'
+  app/views/components/_card_project.html.erb:15:in `_app_views_components__card_project_html_erb___3886556004770846414_70227485341620'
+  app/views/projects/index.html.erb:6:in `block in _app_views_projects_index_html_erb__2845490668710534777_70227486218340'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb__2845490668710534777_70227486218340'
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:02:59 +0100
+Processing by ProjectsController#index as HTML
+Started POST "/__better_errors/d4434e284f55b4ab/variables" for 127.0.0.1 at 2018-11-23 09:02:59 +0100
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (196.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.9ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (7.5ms)
+  Rendered components/_card_task.html.erb (313.8ms)
+  Rendered components/_card_project.html.erb (343.9ms)
+  Rendered projects/index.html.erb within layouts/application (346.5ms)
+Completed 500 Internal Server Error in 517ms (ActiveRecord: 212.2ms)
+
+
+
+NoMethodError - undefined method `to_model' for #<FileUploader:0x000055a15fb54c48>
+Did you mean?  to_xml:
+  app/views/components/_card_comment.html.erb:8:in `block in _app_views_components__card_comment_html_erb__2773209000791090107_47075791680240'
+  app/views/components/_card_comment.html.erb:1:in `_app_views_components__card_comment_html_erb__2773209000791090107_47075791680240'
+  app/views/components/_card_task.html.erb:19:in `block in _app_views_components__card_task_html_erb___3890538037650141536_70227488120960'
+  app/views/components/_card_task.html.erb:8:in `_app_views_components__card_task_html_erb___3890538037650141536_70227488120960'
+  app/views/components/_card_project.html.erb:15:in `_app_views_components__card_project_html_erb___3886556004770846414_70227488877800'
+  app/views/projects/index.html.erb:6:in `block in _app_views_projects_index_html_erb__2845490668710534777_70227483724380'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb__2845490668710534777_70227483724380'
+
+Started POST "/__better_errors/3060d30aeea53717/variables" for 127.0.0.1 at 2018-11-23 09:03:00 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:03:06 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.7ms) [cache miss]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (5.9ms) [cache miss]
+  Rendered components/_card_task.html.erb (35.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (54.2ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (12.1ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (77.8ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 380ms (Views: 355.5ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:03:20 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.9ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  Rendered components/_card_comment.html.erb (0.8ms)
+  Rendered components/_card_task.html.erb (9.1ms)
+  Rendered components/_card_project.html.erb (16.6ms)
+  Rendered projects/index.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 4.6ms)
+
+
+
+SyntaxError - syntax error, unexpected ',', expecting ')'
+e_tag(comment.file.public_id), 'yes' );@output_buffer.safe_a
+                              ^:
+  app/views/components/_card_comment.html.erb:7:in `'
+  app/views/components/_card_task.html.erb:19:in `block in _app_views_components__card_task_html_erb___3890538037650141536_70227278898860'
+  app/views/components/_card_task.html.erb:8:in `_app_views_components__card_task_html_erb___3890538037650141536_70227278898860'
+  app/views/components/_card_project.html.erb:15:in `_app_views_components__card_project_html_erb___3886556004770846414_47075790873520'
+  app/views/projects/index.html.erb:6:in `block in _app_views_projects_index_html_erb__2845490668710534777_70227278771460'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb__2845490668710534777_70227278771460'
+
+Started POST "/__better_errors/d08a0b8e20325b3c/variables" for 127.0.0.1 at 2018-11-23 09:03:20 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:03:28 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.7ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (5.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (13.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (21.1ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.1ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (28.8ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 51ms (Views: 44.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-23 09:18:20 +0100
+  [1m[35m (53.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (30.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (57.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (73.6ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (2.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (87.3ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 454ms (Views: 433.3ms | ActiveRecord: 11.3ms)
+
+
+Started DELETE "/tasks/15/comments/29" for 127.0.0.1 at 2018-11-23 09:18:31 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BBBxkHJi8TvOv4/nBik/ZIM1cc4pa5jQeTANm3K0WtnluzdsByZXdAi4SmI2To/xIAzMAgJy+cLrjEQrQ7Qq+Q==", "task_id"=>"15", "id"=>"29"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 29]]
+  [1m[35m (28.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1072ms (ActiveRecord: 30.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:18:32 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (5.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (5.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (26.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (37.4ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (7.3ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (49.9ms)
+  Rendered components/_navbar.html.erb (1.3ms) [cache miss]
+Completed 200 OK in 102ms (Views: 91.8ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 09:18:33 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (69.0ms) [cache miss]
+  Rendered comments/new.js.erb (74.1ms)
+Completed 200 OK in 98ms (Views: 84.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 09:18:42 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7AZCi8oBmUUMZk25EMqmF4RzWOaJXqLJXdXb5ao+DRoRUNG4svshlDELxsobbn8wqpnReiIZUnQbJXPTCDEMMA==", "comment"=>{"description"=>"dssd", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007fca8234fa68 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-10078-1l3028k.JPG>, @original_filename="permis.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"permis.JPG\"\r\nContent-Type: image/jpeg\r\n">, "file_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (36.7ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "dssd"], ["file", "pxw8pelpdpsyardkvrol.jpg"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 08:18:42.822985"], ["updated_at", "2018-11-23 08:18:42.822985"]]
+  [1m[35m (45.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 120ms (ActiveRecord: 84.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:18:42 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (2.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (11.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (16.6ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (3.3ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (25.3ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 50ms (Views: 40.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:18:57 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (2.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.4ms) [cache miss]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (13.9ms) [cache miss]
+  Rendered components/_card_task.html.erb (39.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (55.7ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (3.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (9.6ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (76.9ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 116ms (Views: 99.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:19:14 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (3.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (8.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (10.9ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (2.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (16.4ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 36ms (Views: 30.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:22:31 +0100
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (28.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (55.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (76.9ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.0ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (91.6ms)
+  Rendered components/_navbar.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 412ms (Views: 357.2ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:22:49 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (6.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (12.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (16.5ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (3.7ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (26.6ms)
+  Rendered components/_navbar.html.erb (1.2ms) [cache miss]
+Completed 200 OK in 49ms (Views: 41.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:24:36 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.6ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (21.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (74.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (102.9ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.2ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (123.9ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 376ms (Views: 333.2ms | ActiveRecord: 14.8ms)
+
+
+Started DELETE "/tasks/15/comments/30" for 127.0.0.1 at 2018-11-23 09:24:38 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K/D0NGgZkRUHUHnbf92gZco9LXKog4G1l4uGcwEoaWbKW7LIHV03WsFXvF5PuhDwaQSQvoOa4KcFN8/DMCgZRg==", "task_id"=>"15", "id"=>"30"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 30]]
+  [1m[35m (25.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1009ms (ActiveRecord: 27.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:24:39 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.8ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (7.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (30.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (46.0ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (4.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (10.7ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (67.6ms)
+  Rendered components/_navbar.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 121ms (Views: 98.8ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 09:24:42 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (69.4ms) [cache miss]
+  Rendered comments/new.js.erb (73.0ms)
+Completed 200 OK in 100ms (Views: 84.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 09:24:48 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S87aHZqasKsUD5gqO3XbG2x05ZHpYnar6amtGO9EU6O2mEku4mAIeiliE1kw0QI8Qp5sDUIlhhavWQUuTUtSiQ==", "comment"=>{"description"=>"dz", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007ff9604a7bd8 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-11033-ntq4kb.odt>, @original_filename="Backoffice Home Abroad - remarques dev.odt", @content_type="application/vnd.oasis.opendocument.text", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"Backoffice Home Abroad - remarques dev.odt\"\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n">, "file_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (8.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "dz"], ["file", "cgbflbgs6cwlx9cnkxsj.odt"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 08:24:48.197979"], ["updated_at", "2018-11-23 08:24:48.197979"]]
+  [1m[35m (34.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 78ms (ActiveRecord: 45.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:24:48 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (2.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (2.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (12.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (19.0ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (2.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (26.3ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 49ms (Views: 43.7ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/tasks/15/comments/31" for 127.0.0.1 at 2018-11-23 09:24:50 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cwsvIqjCquyPgamY0zqWrhDAqZeUzKC4rMRQ3PqQ6DOSoGne3YYMo0mGbB3jXSY7s/kUW7/Vwao+eBlsy5CYEw==", "task_id"=>"15", "id"=>"31"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 31]]
+  [1m[35m (41.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1035ms (ActiveRecord: 46.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:24:51 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.3ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (3.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (12.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (17.8ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (3.3ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (25.3ms)
+  Rendered components/_navbar.html.erb (1.2ms) [cache miss]
+Completed 200 OK in 51ms (Views: 42.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 09:24:52 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (29.0ms) [cache miss]
+  Rendered comments/new.js.erb (34.8ms)
+Completed 200 OK in 61ms (Views: 46.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 09:24:58 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1MLHDOrrbnMOalc1pz8gJ+AgNudlLmwRZx2HEKQdMRUplFQ/khHWojMH3Easm/kAzsq/e85pnKwh7S8mBhIwPw==", "comment"=>{"description"=>"", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007ff96c86b330 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-11033-1ilu4et.JPG>, @original_filename="permis.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"permis.JPG\"\r\nContent-Type: image/jpeg\r\n">, "file_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (3.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 5.2ms)
+
+
+
+ActionView::MissingTemplate - Missing template comments/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/franklin/code/franklindch/tests/test-backend/app/views"
+  * "/home/franklin/.rbenv/versions/2.4.5/lib/ruby/gems/2.4.0/gems/devise-4.5.0/app/views"
+:
+  app/controllers/comments_controller.rb:15:in `create'
+
+Started POST "/__better_errors/b7d4c5aaef963971/variables" for 127.0.0.1 at 2018-11-23 09:24:58 +0100
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 09:25:01 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (54.1ms) [cache miss]
+  Rendered comments/new.js.erb (58.2ms)
+Completed 200 OK in 82ms (Views: 67.9ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 09:25:10 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QFu/sJNXg2QGJ3iGIBHH6Kog9WbiC6oWywhhRcMFByC9DSyD6607tTtK8/UrtR7PhMp8+klMWquN+MlzYQoGCg==", "comment"=>{"description"=>"fd", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007ff960b350e0 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-11033-1m0x3lg.JPG>, @original_filename="permis.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"permis.JPG\"\r\nContent-Type: image/jpeg\r\n">, "file_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "fd"], ["file", "xwjtljhylzneeop1n8io.jpg"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 08:25:10.366106"], ["updated_at", "2018-11-23 08:25:10.366106"]]
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 43ms (ActiveRecord: 29.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:25:10 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (2.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (9.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (15.2ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.8ms) [cache miss]
+  Rendered components/_card_project.html.erb (4.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (23.3ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 39ms (Views: 33.8ms | ActiveRecord: 2.5ms)
+
+
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:29:28 +0100
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.3ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (82.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (123.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (154.2ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (6.1ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (174.4ms)
+  Rendered components/_navbar.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 473ms (Views: 412.3ms | ActiveRecord: 20.9ms)
+
+
+Started DELETE "/tasks/15/comments/32" for 127.0.0.1 at 2018-11-23 09:29:35 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LQj5w9kDaNa2nAtV2SAo/eSPMvRCQpG5Uyb3PLFpdW/Mo78/rEfOmXCbztDpR5hoR7aPOGlb8KvBmr6MgGkFTw==", "task_id"=>"15", "id"=>"32"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 32]]
+  [1m[35m (27.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1240ms (ActiveRecord: 31.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:29:36 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.0ms) [cache miss]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (6.5ms) [cache miss]
+  Rendered components/_card_task.html.erb (21.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (32.2ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (3.6ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (46.9ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 83ms (Views: 66.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:29:45 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (2.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (2.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (11.8ms) [cache miss]
+  Rendered components/_card_project.html.erb (15.3ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (5.2ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (23.2ms)
+  Rendered components/_navbar.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 49ms (Views: 43.1ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8688009949366714365);[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnType (20181123083109)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (74.4ms)[0m  [1m[35mALTER TABLE "comments" ALTER COLUMN "file" TYPE photo[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(8688009949366714365)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8688009949366714365);[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnType (20181123083109)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "comments" RENAME COLUMN "file" TO "photo"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181123083109"]]
+  [1m[35m (25.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8688009949366714365)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:33:02 +0100
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (53.0ms)
+  Rendered components/_card_project.html.erb (71.7ms)
+  Rendered projects/index.html.erb within layouts/application (87.1ms)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 16.2ms)
+
+
+
+NameError - uninitialized constant Comment::PhotoUploader:
+  app/models/comment.rb:5:in `<class:Comment>'
+  app/models/comment.rb:1:in `<top (required)>'
+  app/views/components/_card_task.html.erb:19:in `block in _app_views_components__card_task_html_erb___226504170743604414_46934297327220'
+  app/views/components/_card_task.html.erb:8:in `_app_views_components__card_task_html_erb___226504170743604414_46934297327220'
+  app/views/components/_card_project.html.erb:15:in `_app_views_components__card_project_html_erb___2887036112110068655_46934306678380'
+  app/views/projects/index.html.erb:6:in `block in _app_views_projects_index_html_erb__521257329379776861_46934308224680'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb__521257329379776861_46934308224680'
+
+Started POST "/__better_errors/2df45793c1a971cf/variables" for 127.0.0.1 at 2018-11-23 09:33:03 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:33:19 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (41.0ms)
+  Rendered components/_card_project.html.erb (58.7ms)
+  Rendered projects/index.html.erb within layouts/application (68.4ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 11.4ms)
+
+
+
+NameError - uninitialized constant Comment::PhotoUploader:
+  app/models/comment.rb:5:in `<class:Comment>'
+  app/models/comment.rb:1:in `<top (required)>'
+  app/views/components/_card_task.html.erb:19:in `block in _app_views_components__card_task_html_erb___189699652899698206_69940593037840'
+  app/views/components/_card_task.html.erb:8:in `_app_views_components__card_task_html_erb___189699652899698206_69940593037840'
+  app/views/components/_card_project.html.erb:15:in `_app_views_components__card_project_html_erb___231832071535523999_69940593320060'
+  app/views/projects/index.html.erb:6:in `block in _app_views_projects_index_html_erb__3055306825569274795_69940593795380'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb__3055306825569274795_69940593795380'
+
+Started POST "/__better_errors/27d78a59fea678c6/variables" for 127.0.0.1 at 2018-11-23 09:33:19 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:33:40 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  Rendered components/_card_task.html.erb (32.5ms)
+  Rendered components/_card_project.html.erb (48.6ms)
+  Rendered projects/index.html.erb within layouts/application (57.9ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 11.3ms)
+
+
+
+CarrierWave::UnknownStorageError - Unknown storage: photo:
+  app/uploaders/photo_uploader.rb:8:in `<class:PhotoUploader>'
+  app/uploaders/photo_uploader.rb:1:in `<top (required)>'
+  app/models/comment.rb:5:in `<class:Comment>'
+  app/models/comment.rb:1:in `<top (required)>'
+  app/views/components/_card_task.html.erb:19:in `block in _app_views_components__card_task_html_erb__2700650736652216108_70142024069080'
+  app/views/components/_card_task.html.erb:8:in `_app_views_components__card_task_html_erb__2700650736652216108_70142024069080'
+  app/views/components/_card_project.html.erb:15:in `_app_views_components__card_project_html_erb__4583740425430249306_70142019900700'
+  app/views/projects/index.html.erb:6:in `block in _app_views_projects_index_html_erb___1095729333319939392_70142025454180'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb___1095729333319939392_70142025454180'
+
+Started POST "/__better_errors/810b90a23d7d30bb/variables" for 127.0.0.1 at 2018-11-23 09:33:41 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:33:50 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (22.7ms)
+  Rendered components/_card_task.html.erb (42.2ms)
+  Rendered components/_card_project.html.erb (49.8ms)
+  Rendered projects/index.html.erb within layouts/application (58.4ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 12.9ms)
+
+
+
+NoMethodError - undefined method `file' for #<Comment:0x000055859c398d58>:
+  app/views/components/_card_comment.html.erb:20:in `_app_views_components__card_comment_html_erb__4110185659918517822_47016169514560'
+  app/views/components/_card_task.html.erb:19:in `block in _app_views_components__card_task_html_erb__2700650736652216108_47016179916480'
+  app/views/components/_card_task.html.erb:8:in `_app_views_components__card_task_html_erb__2700650736652216108_47016179916480'
+  app/views/components/_card_project.html.erb:15:in `_app_views_components__card_project_html_erb__4583740425430249306_47016181286180'
+  app/views/projects/index.html.erb:6:in `block in _app_views_projects_index_html_erb___1095729333319939392_70142019398920'
+  app/views/projects/index.html.erb:3:in `_app_views_projects_index_html_erb___1095729333319939392_70142019398920'
+
+Started POST "/__better_errors/47c5e1c80faf85d8/variables" for 127.0.0.1 at 2018-11-23 09:33:50 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:34:02 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (77.8ms) [cache miss]
+  Rendered components/_card_task.html.erb (83.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (89.0ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (3.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (97.5ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 322ms (Views: 316.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:34:17 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.2ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (3.1ms) [cache miss]
+  Rendered components/_card_task.html.erb (18.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (24.7ms) [cache miss]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (4.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (8.6ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (40.1ms)
+  Rendered components/_navbar.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 74ms (Views: 58.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 09:34:20 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (43.3ms) [cache miss]
+  Rendered comments/new.js.erb (45.6ms)
+Completed 200 OK in 59ms (Views: 50.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 09:34:26 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kd+wOure5fgM6k8yVLntC7ZyDOtuKcCJrjYBH4kHJZbUiSMJkiRdKTGHxEFfHTQsmJiFd8VuMDToxqkpKwgkvA==", "comment"=>{"description"=>"dzdz", "photo"=>#<ActionDispatch::Http::UploadedFile:0x000055859d1194a0 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-12563-kxd192.JPG>, @original_filename="permis.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"comment[photo]\"; filename=\"permis.JPG\"\r\nContent-Type: image/jpeg\r\n">, "photo_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Unpermitted parameters: :photo, :photo_cache
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("description", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "dzdz"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 08:34:26.403601"], ["updated_at", "2018-11-23 08:34:26.403601"]]
+  [1m[35m (32.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 46ms (ActiveRecord: 33.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:34:26 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.0ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.1ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (3.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (15.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (21.5ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (3.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (7.0ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (35.5ms)
+  Rendered components/_navbar.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 78ms (Views: 64.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:35:12 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.7ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (16.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (57.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (79.7ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (5.5ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (96.7ms)
+  Rendered components/_navbar.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 434ms (Views: 366.7ms | ActiveRecord: 22.0ms)
+
+
+Started DELETE "/tasks/15/comments/33" for 127.0.0.1 at 2018-11-23 09:35:15 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2deOcMrp4ftX4Rr7HfJJlP5NJGvcp4HrzD1YXCUcWz04fMiMv61HtJHm334tlfkBXXSZp/e+4PlegRHsFBwrHQ==", "task_id"=>"15", "id"=>"33"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 33]]
+  [1m[35m (33.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 47ms (ActiveRecord: 34.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:35:15 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.0ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.8ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (4.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (15.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (23.8ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.8ms) [cache miss]
+  Rendered components/_card_project.html.erb (6.2ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (37.2ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 74ms (Views: 60.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 09:35:16 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (97.6ms) [cache miss]
+  Rendered comments/new.js.erb (101.7ms)
+Completed 200 OK in 134ms (Views: 116.8ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 09:35:21 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jVDpFNnu03/KGTI1PfjAZd7G8f+jYtvUIZImd6nnjFZwBnonoRRrrvd0uUY2XBlC8Cx4YwglK2lnYo5BC+iNfA==", "comment"=>{"description"=>"dz", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fdd889eb2c8 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-12814-1le7go8.JPG>, @original_filename="permis.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"comment[photo]\"; filename=\"permis.JPG\"\r\nContent-Type: image/jpeg\r\n">, "photo_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Unpermitted parameter: :photo_cache
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("description", "photo", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "dz"], ["photo", "x12cunksnornf67ayf33.jpg"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 08:35:21.103828"], ["updated_at", "2018-11-23 08:35:21.103828"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 131ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:35:21 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.6ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (6.1ms) [cache miss]
+  Rendered components/_card_task.html.erb (20.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (29.9ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (5.4ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (42.1ms)
+  Rendered components/_navbar.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 93ms (Views: 69.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:37:44 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (21.8ms) [cache miss]
+  Rendered components/_card_task.html.erb (86.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (116.5ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (2.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (129.4ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 350ms (Views: 307.9ms | ActiveRecord: 13.4ms)
+
+
+Started DELETE "/tasks/15/comments/34" for 127.0.0.1 at 2018-11-23 09:37:46 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9H/aZLVyESFj3EgYt6Y0mDve8OgqNeS4yz/425vXW1cV1JyYwDa3bqXbjZ2HwYQNmOdNJAEshapZg7Frqtcrdw==", "task_id"=>"15", "id"=>"34"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 34]]
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 917ms (ActiveRecord: 32.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:37:47 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.9ms) [cache miss]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (4.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (26.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (41.2ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.8ms) [cache miss]
+  Rendered components/_card_project.html.erb (7.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (59.7ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 103ms (Views: 79.4ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 09:37:49 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (93.3ms) [cache miss]
+  Rendered comments/new.js.erb (97.4ms)
+Completed 200 OK in 126ms (Views: 110.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 09:37:55 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ax87nMyjdIafwrsC1wSxFVaD7KhIRW65XDJisuaPxRP+SaivtFnMV6KvMHHcoGgyeGllNOMCngQawsqERIDEOQ==", "comment"=>{"description"=>"dz", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f9d8c52baa8 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-13194-15u0f6c.JPG>, @original_filename="permis.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"comment[photo]\"; filename=\"permis.JPG\"\r\nContent-Type: image/jpeg\r\n">, "photo_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (4.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("description", "photo", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "dz"], ["photo", "om9mgdwbsxjm3hmmlune.jpg"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 08:37:55.245520"], ["updated_at", "2018-11-23 08:37:55.245520"]]
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "comments" SET "photo" = 'image/upload/v1542962280/om9mgdwbsxjm3hmmlune.jpg' WHERE "comments"."id" = $1[0m  [["id", 35]]
+  [1m[35m (29.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 6430ms (ActiveRecord: 37.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:38:01 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.8ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (3.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (11.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (17.5ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (3.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (26.2ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 53ms (Views: 40.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-23 09:39:09 +0100
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.7ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (16.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (62.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (73.7ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (5.1ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (88.9ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 111ms (Views: 93.2ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 09:39:22 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (13.1ms) [cache miss]
+  Rendered comments/new.js.erb (15.2ms)
+Completed 200 OK in 29ms (Views: 19.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 09:39:27 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLyz6KK+VCWpUYSgdAJdZSJ1R3Ib6BXQyO7Z9YY+fJ9p6iDb2kTs9JQ8D9N/poRCDJ/O7rCv5W2OHnHDJDF9tQ==", "comment"=>{"description"=>"ds", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f9d9c0b3a38 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-13194-16jorcp.xls>, @original_filename="Ancienne base HA.xls", @content_type="application/vnd.ms-excel", @headers="Content-Disposition: form-data; name=\"comment[photo]\"; filename=\"Ancienne base HA.xls\"\r\nContent-Type: application/vnd.ms-excel\r\n">, "photo_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("description", "photo", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "ds"], ["photo", "nfldb94qsaiunizbaqw1.xls"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 08:39:27.321384"], ["updated_at", "2018-11-23 08:39:27.321384"]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "comments" SET "photo" = 'raw/upload/v1542962394/nfldb94qsaiunizbaqw1.xls' WHERE "comments"."id" = $1[0m  [["id", 36]]
+  [1m[35m (33.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 28094ms (ActiveRecord: 37.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:39:55 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (3.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (10.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (13.9ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (2.7ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (20.2ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 38ms (Views: 31.7ms | ActiveRecord: 2.7ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8688009949366714365);[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnType (20181123083109)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "comments" RENAME COLUMN "photo" TO "file"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20181123083109"]]
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8688009949366714365)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:41:35 +0100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+
+Started POST "/__better_errors/84f56374de90f034/variables" for 127.0.0.1 at 2018-11-23 09:41:35 +0100
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:42:02 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (24.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (61.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (77.3ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (2.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (90.9ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 362ms (Views: 321.2ms | ActiveRecord: 15.5ms)
+
+
+Started DELETE "/tasks/15/comments/36" for 127.0.0.1 at 2018-11-23 09:42:05 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4C3AT6FotAi2s7nFHr1uggIrt20fdkONUeA+5LvnHEsBhoaz1CwSR3C0fEAu2t4XoRIKoTRvIp/DXHdUiudsaw==", "task_id"=>"15", "id"=>"36"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 36]]
+  [1m[35m (24.3ms)[0m  [1m[35mCOMMIT[0m
+Started DELETE "/tasks/15/comments/35" for 127.0.0.1 at 2018-11-23 09:42:06 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4C3AT6FotAi2s7nFHr1uggIrt20fdkONUeA+5LvnHEsBhoaz1CwSR3C0fEAu2t4XoRIKoTRvIp/DXHdUiudsaw==", "task_id"=>"15", "id"=>"35"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 35]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1418ms (ActiveRecord: 25.7ms)
+
+
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 904ms (ActiveRecord: 30.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:42:06 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (3.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (2.3ms) [cache miss]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (14.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (52.4ms) [cache miss]
+  Rendered components/_card_project.html.erb (73.2ms) [cache miss]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Started DELETE "/tasks/15/comments/19" for 127.0.0.1 at 2018-11-23 09:42:07 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4C3AT6FotAi2s7nFHr1uggIrt20fdkONUeA+5LvnHEsBhoaz1CwSR3C0fEAu2t4XoRIKoTRvIp/DXHdUiudsaw==", "task_id"=>"15", "id"=>"19"}
+  [1m[36mTask Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (11.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (20.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (108.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered components/_navbar.html.erb (0.9ms) [cache miss]
+  [1m[36mComment Load (37.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+Completed 200 OK in 174ms (Views: 152.3ms | ActiveRecord: 10.1ms)
+
+
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 19]]
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 83ms (ActiveRecord: 73.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:42:07 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (1.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (7.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (11.2ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (1.2ms) [cache miss]
+  Rendered components/_card_project.html.erb (3.1ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (17.0ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 36ms (Views: 31.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/tasks/15/comments/new" for 127.0.0.1 at 2018-11-23 09:42:08 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"15"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (74.5ms) [cache miss]
+  Rendered comments/new.js.erb (79.6ms)
+Completed 200 OK in 109ms (Views: 92.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/tasks/15/comments" for 127.0.0.1 at 2018-11-23 09:42:16 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IO72rBqogM9wiTM9svOhRIXKBSx6g3o6dn8qszyoy7zduGWfYlI4Hk3kuE65V3hjqyCMsNHEiocwj4KFnqfKlg==", "comment"=>{"description"=>"dza", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007f642ce42888 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-14043-bdtllh.odt>, @original_filename="Notes test - Skello.odt", @content_type="application/vnd.oasis.opendocument.text", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"Notes test - Skello.odt\"\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n">, "file_cache"=>""}, "commit"=>"Valider", "task_id"=>"15"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (5.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "dza"], ["file", "z3nq4yfdm3brwarixx8o.odt"], ["task_id", 15], ["user_id", 6], ["created_at", "2018-11-23 08:42:16.580222"], ["updated_at", "2018-11-23 08:42:16.580222"]]
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "comments" SET "file" = 'raw/upload/v1542962537/z3nq4yfdm3brwarixx8o.odt' WHERE "comments"."id" = $1[0m  [["id", 37]]
+  [1m[35m (29.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1280ms (ActiveRecord: 39.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:42:17 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (2.7ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (2.0ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.2ms) [cache miss]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (12.8ms) [cache miss]
+  Rendered components/_card_task.html.erb (41.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (54.7ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  Rendered components/_card_task.html.erb (2.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (9.2ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (77.5ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 123ms (Views: 100.1ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/projects/16/tasks/new" for 127.0.0.1 at 2018-11-23 09:42:49 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"16"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 ORDER BY "projects"."created_at" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (50.9ms) [cache miss]
+  Rendered tasks/new.js.erb (56.6ms)
+Completed 200 OK in 85ms (Views: 67.6ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/projects/16/tasks" for 127.0.0.1 at 2018-11-23 09:42:54 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X5D2Nvnf5c0PTQZoCuVgz26wz2ziEF1GqxGEaSK76Bc0k9diKn6HqQS+dK04soq5YSI1/MQSt10Ryjjn8zztbA==", "task"=>{"description"=>"dz", "priority"=>"Priority_1", "deadline"=>"2018-11-24"}, "commit"=>"Valider", "project_id"=>"16"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 ORDER BY "projects"."created_at" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (89.8ms)[0m  [1m[32mINSERT INTO "tasks" ("priority", "deadline", "created_at", "updated_at", "project_id", "description") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["priority", 0], ["deadline", "2018-11-24"], ["created_at", "2018-11-23 08:42:54.571004"], ["updated_at", "2018-11-23 08:42:54.571004"], ["project_id", 16], ["description", "dz"]]
+  [1m[35m (50.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 174ms (ActiveRecord: 144.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:42:54 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.7ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.0ms) [cache miss]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (8.5ms) [cache miss]
+  Rendered components/_card_task.html.erb (30.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (44.6ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.2ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (2.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (9.7ms) [cache miss]
+  Rendered components/_card_project.html.erb (13.5ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (71.3ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 120ms (Views: 94.9ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/tasks/25/comments/new" for 127.0.0.1 at 2018-11-23 09:42:56 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"25"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (26.2ms) [cache miss]
+  Rendered comments/new.js.erb (30.4ms)
+Completed 200 OK in 55ms (Views: 40.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/tasks/25/comments" for 127.0.0.1 at 2018-11-23 09:43:01 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hw06ZLu/Ew/NFFJ68fEw3KzvjFL7K12jVw4BdVbrEvyqezOFnC5K40wjjo3NHq5PNKZDpZ0zcQkHyRKPnyoiyg==", "comment"=>{"description"=>"z", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007f6410094fe0 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-14043-ovmias.odt>, @original_filename="Stratégie recrutement devodt.odt", @content_type="application/vnd.oasis.opendocument.text", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"Strat\xC3\xA9gie recrutement devodt.odt\"\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n">, "file_cache"=>""}, "commit"=>"Valider", "task_id"=>"25"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (7.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "z"], ["file", "ehidbyvl0at1omz46stb.odt"], ["task_id", 25], ["user_id", 6], ["created_at", "2018-11-23 08:43:01.049044"], ["updated_at", "2018-11-23 08:43:01.049044"]]
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "comments" SET "file" = 'raw/upload/v1542962581/ehidbyvl0at1omz46stb.odt' WHERE "comments"."id" = $1[0m  [["id", 38]]
+  [1m[35m (9.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1125ms (ActiveRecord: 22.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:43:02 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (2.8ms) [cache miss]
+  Rendered components/_card_task.html.erb (10.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (14.5ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (2.6ms) [cache miss]
+  Rendered components/_card_task.html.erb (8.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (9.9ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (27.9ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 51ms (Views: 39.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:43:27 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.7ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (3.3ms) [cache miss]
+  Rendered components/_card_task.html.erb (9.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (14.1ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.2ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (1.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (9.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (11.4ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (29.7ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 51ms (Views: 42.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/tasks/25/comments/new" for 127.0.0.1 at 2018-11-23 09:43:34 +0100
+Processing by CommentsController#new as JS
+  Parameters: {"task_id"=>"25"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering comments/new.js.erb
+  Rendered comments/_form.html.erb (23.4ms) [cache miss]
+  Rendered comments/new.js.erb (28.4ms)
+Completed 200 OK in 52ms (Views: 39.0ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/tasks/25/comments" for 127.0.0.1 at 2018-11-23 09:43:39 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lGTL4COCrD43cnDuv2KpcNVxKJ8IFzA90Y3gs9KWJYIhEsIBBBP10rZFrBmDjTfjTTjnaG4PHJeBSvNJG1cVtA==", "comment"=>{"description"=>"dz", "file"=>#<ActionDispatch::Http::UploadedFile:0x00007f64143b3588 @tempfile=#<Tempfile:/tmp/RackMultipart20181123-14043-1hdab6l.odt>, @original_filename="Notes test - Skello.odt", @content_type="application/vnd.oasis.opendocument.text", @headers="Content-Disposition: form-data; name=\"comment[file]\"; filename=\"Notes test - Skello.odt\"\r\nContent-Type: application/vnd.oasis.opendocument.text\r\n">, "file_cache"=>""}, "commit"=>"Valider", "task_id"=>"25"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (7.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "comments" ("description", "file", "task_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "dz"], ["file", "mv8rsd4qjbnmm0fcbqku.odt"], ["task_id", 25], ["user_id", 6], ["created_at", "2018-11-23 08:43:39.633940"], ["updated_at", "2018-11-23 08:43:39.633940"]]
+  [1m[35mSQL (1.9ms)[0m  [1m[33mUPDATE "comments" SET "file" = 'raw/upload/v1542962620/mv8rsd4qjbnmm0fcbqku.odt' WHERE "comments"."id" = $1[0m  [["id", 39]]
+  [1m[35m (35.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 1488ms (ActiveRecord: 48.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:43:41 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (1.2ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (3.3ms) [cache miss]
+  Rendered components/_card_task.html.erb (13.6ms) [cache miss]
+  Rendered components/_card_project.html.erb (18.9ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (2.3ms) [cache miss]
+  Rendered components/_card_task.html.erb (7.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (9.5ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (33.7ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 63ms (Views: 46.0ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:44:01 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.9ms) [cache miss]
+  Rendered tasks/_completed.html.erb (8.8ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (2.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (19.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (29.0ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.4ms) [cache miss]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (2.9ms) [cache miss]
+  Rendered components/_card_task.html.erb (10.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (13.7ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (48.7ms)
+  Rendered components/_navbar.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 9557ms (Views: 9540.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:44:22 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.2ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (1.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (6.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (10.1ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (4.1ms) [cache miss]
+  Rendered components/_card_task.html.erb (8.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (10.4ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (22.8ms)
+  Rendered components/_navbar.html.erb (1.1ms) [cache miss]
+Completed 200 OK in 2904ms (Views: 2899.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:44:33 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.4ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (4.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (11.8ms) [cache miss]
+  Rendered components/_card_project.html.erb (15.2ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (1.9ms) [cache miss]
+  Rendered components/_card_task.html.erb (8.1ms) [cache miss]
+  Rendered components/_card_project.html.erb (12.0ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (30.7ms)
+  Rendered components/_navbar.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 2974ms (Views: 2960.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/tasks/25/completed" for 127.0.0.1 at 2018-11-23 09:44:42 +0100
+Processing by TasksController#completed as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProject Load (1.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 ORDER BY "projects"."created_at" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", 1], ["updated_at", "2018-11-23 08:44:42.990675"], ["id", 25]]
+  [1m[35m (35.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 72ms (ActiveRecord: 40.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:44:43 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (2.6ms) [cache miss]
+  Rendered tasks/_completed.html.erb (1.6ms) [cache miss]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (11.2ms) [cache miss]
+  Rendered components/_card_task.html.erb (40.0ms) [cache miss]
+  Rendered components/_card_project.html.erb (54.3ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.2ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (3.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (11.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (17.0ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (82.3ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 117ms (Views: 97.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/projects/16/tasks/new" for 127.0.0.1 at 2018-11-23 09:44:52 +0100
+Processing by TasksController#new as JS
+  Parameters: {"project_id"=>"16"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 ORDER BY "projects"."created_at" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering tasks/new.js.erb
+  Rendered tasks/_form.html.erb (22.4ms) [cache miss]
+  Rendered tasks/new.js.erb (26.0ms)
+Completed 200 OK in 46ms (Views: 33.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/projects/16/tasks" for 127.0.0.1 at 2018-11-23 09:45:00 +0100
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zdysmY721KeTfJ0OBYfck3dTwu8Rs59dwokhvA0LGlOm343NXVe2w5iP78s30DbleME4fzexdUZ4Up0y3IwfKA==", "task"=>{"description"=>"zdad", "priority"=>"Priority_3", "deadline"=>"2018-11-20"}, "commit"=>"Valider", "project_id"=>"16"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = $1 ORDER BY "projects"."created_at" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("priority", "deadline", "created_at", "updated_at", "project_id", "description") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["priority", 2], ["deadline", "2018-11-20"], ["created_at", "2018-11-23 08:45:00.423572"], ["updated_at", "2018-11-23 08:45:00.423572"], ["project_id", 16], ["description", "zdad"]]
+  [1m[35m (26.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 55ms (ActiveRecord: 30.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:45:00 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.5ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.3ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (2.0ms) [cache miss]
+  Rendered components/_card_task.html.erb (7.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (12.5ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.2ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (3.4ms) [cache miss]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.1ms) [cache miss]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 26]]
+  Rendered components/_card_comment.html.erb (0.9ms) [cache miss]
+  Rendered components/_card_task.html.erb (12.5ms) [cache miss]
+  Rendered components/_card_project.html.erb (16.3ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (34.4ms)
+  Rendered components/_navbar.html.erb (1.0ms) [cache miss]
+Completed 200 OK in 55ms (Views: 46.8ms | ActiveRecord: 4.4ms)
+
+
+Started DELETE "/projects/16/tasks/26" for 127.0.0.1 at 2018-11-23 09:45:03 +0100
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"quyn2XXqIMlaS4bun1KDDC7pmwE0Hn11NGE7A1qyGqpLR+ElAK6GhpxMQ2uvNTOZjdAmzR8HHGem3XKza7Jqig==", "project_id"=>"16", "id"=>"26"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 26]]
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 26]]
+  [1m[35m (35.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 48ms (ActiveRecord: 37.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2018-11-23 09:45:03 +0100
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (1.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."user_id" = 6 ORDER BY "projects"."created_at" ASC[0m
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 5], ["LIMIT", 1]]
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 5]]
+  Rendered tasks/_due.html.erb (0.8ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.5ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 15]]
+  Rendered components/_card_comment.html.erb (3.7ms) [cache miss]
+  Rendered components/_card_task.html.erb (21.3ms) [cache miss]
+  Rendered components/_card_project.html.erb (36.7ms) [cache miss]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTask Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tasks" WHERE "tasks"."project_id" = $1 LIMIT $2[0m  [["project_id", 16], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" = $1[0m  [["project_id", 16]]
+  Rendered tasks/_due.html.erb (0.1ms) [cache miss]
+  Rendered tasks/_completed.html.erb (0.0ms) [cache miss]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."task_id" = $1[0m  [["task_id", 25]]
+  Rendered components/_card_comment.html.erb (2.4ms) [cache miss]
+  Rendered components/_card_task.html.erb (10.9ms) [cache miss]
+  Rendered components/_card_project.html.erb (15.8ms) [cache miss]
+  Rendered projects/index.html.erb within layouts/application (61.4ms)
+  Rendered components/_navbar.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 95ms (Views: 75.6ms | ActiveRecord: 7.6ms)
+
+

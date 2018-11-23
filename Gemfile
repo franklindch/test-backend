@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.4.5'
 
 gem 'bootstrap', '~> 4.0.0'
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 gem 'devise'
 gem 'flatpickr'
 gem 'pundit'
@@ -18,6 +20,8 @@ gem 'uglifier'
 gem 'font-awesome-sass'
 gem 'simple_form', '~> 3.5'
 gem 'autoprefixer-rails'
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'binding_of_caller'
